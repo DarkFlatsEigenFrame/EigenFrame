@@ -19,7 +19,7 @@ For FITS and XISF frames, EigenFrame reads a set of header keywords to identify 
 
 ## Imported masters lose most of this
 
-A master built in PixInsight's integration process does not carry the same header a raw frame does. Integration strips gain, offset, readout mode, set-temp, and exposure time from the header, and rescales the pixel data. None of those fields survive into the file.
+An integrated master does not carry the same header a raw frame does. Gain, offset, readout mode, set-temp and exposure time are commonly absent, and the pixel data has usually been rescaled, since integration produces a new image rather than a copy of any one input.
 
 If you import a master built outside EigenFrame, its filename and the folder it lives in are often the only place those values still exist. When a calibration assignment can't match the master automatically, you may need to assert gain, offset, readout mode, set-temp, or exposure yourself so matching has something to work with.
 

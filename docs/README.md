@@ -46,6 +46,18 @@ EigenFrame is astrophotography preprocessing for monochrome XISF and FITS librar
 - [Flat quality verdicts](./calibration/flat-quality-verdicts.md)
 - [When calibration is not applied](./calibration/when-calibration-does-not-bind.md)
 
+## Register and stack
+
+Work these in order. Each step depends on the one before it.
+
+- [Choose an alignment reference](./stack/choose-an-alignment-reference.md)
+- [Evaluate alignment](./stack/evaluate-alignment.md)
+- [The Alignment Viewer](./stack/alignment-viewer.md)
+- [When frames will not align](./stack/when-frames-will-not-align.md)
+- [Integrate aligned frames](./stack/integrate-aligned-frames.md)
+- [Rejection and normalization](./stack/rejection-and-normalization.md)
+- [Where stacks are saved](./stack/where-stacks-are-saved.md)
+
 ## Help
 
 - [Troubleshooting](./help/troubleshooting.md)

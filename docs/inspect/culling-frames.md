@@ -24,11 +24,11 @@ Every rejected frame can be restored. In the contact sheet and the viewer, the s
 
 Because restoring is always available, there's no reason to hesitate over a borderline frame. Reject it, and if you change your mind later, restore it. Nothing is lost either way.
 
-## Delete: permanent, and the bridge to your whole toolchain
+## Delete: permanent, and it changes what is on disk
 
 Delete only appears on frames you've already rejected. It removes the file from disk, along with EigenFrame's tile data for it, and there is no way back afterward.
 
-This is the action that reaches the rest of your toolchain. Every tool you run walks the same folders on disk, so deleting the junk you culled hands a cleaner set to whatever stacker comes next. Delete is how a culling decision made in EigenFrame leaves the app.
+That is the difference worth understanding. Rejecting records a decision in EigenFrame's catalog. Deleting changes the folder itself, so the cleaner set is what every later read of that folder finds.
 
 A single delete opens a confirmation dialog showing exactly what you're about to remove, with the file count and a preview filmstrip for more than one frame. Press D to confirm or Escape to back out, or shift-click the delete control to skip the dialog entirely for a single frame.
 

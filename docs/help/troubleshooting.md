@@ -65,6 +65,8 @@ Work through the likely causes:
 
 A frame marked **Out of band** did produce a self-consistent fit, but its scale or rotation falls outside the rig's tolerance. It is advisory, and you can accept the fit yourself if you know the rotation is real. **Won't align** means no match was found at all. Nothing is culled automatically in either case.
 
+For the full decision tree, see [when frames will not align](../stack/when-frames-will-not-align.md).
+
 ## A stack failed or was cancelled
 
 A stack fails when one of its source frames couldn't be prepared, usually a decode failure on that specific file. The failure names the artifact involved, so you can go straight to it instead of guessing. Reject that source and rerun the stack, or investigate the named file (corrupt download, unsupported variant, damaged on disk) if it's unexpected.
