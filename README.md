@@ -21,7 +21,8 @@ The installers are unsigned, so your OS warns you once on first launch.
   elsewhere. EigenFrame assigns them per frame and shows calibrated thumbnails, so an over- or
   under-correcting flat is visible in seconds.
 - **Flat epochs.** Track how long a flat stays valid, and what ends its validity.
-- **Registration you can judge.** Fit every sub to a reference and blink the result yourself.
+- **Registration you can judge.** Fit every sub to a reference, then flip between the two and
+  judge the result yourself.
 - **Integration.** Rejection, normalization, quality weighting, and pixel repair, producing a
   linear integrated master.
 

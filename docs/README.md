@@ -17,7 +17,7 @@ EigenFrame is astrophotography preprocessing for monochrome XISF and FITS librar
 
 **Judge your flats.** Each night and filter of flats gets a verdict, separating a one-off contaminated frame from dew building through the run from a real change in the optical train.
 
-**Register and stack.** Frames are fitted to one alignment reference per target and rig from the star catalogs alone. A blink comparator lets you judge any fit yourself and accept, lock or reset it. Integration applies calibration inline, with pixel repair, quality weighting, localized normalization and tunable rejection, dialed in against a single-tile stacking lab before you commit the full stack.
+**Register and stack.** Frames are fitted to one alignment reference per target and rig from the star catalogs alone. Flip any frame against the reference to judge the fit yourself, then accept, lock or reset it. Integration applies calibration inline, with pixel repair, quality weighting, localized normalization and tunable rejection, dialed in against a single-tile stacking lab before you commit the full stack.
 
 **Organize itself.** Rigs, sessions and targets are discovered from your headers. Nothing is moved, copied, renamed or uploaded.
 
@@ -32,6 +32,19 @@ EigenFrame is astrophotography preprocessing for monochrome XISF and FITS librar
 ## Your library
 
 - [Supported file formats](./library/supported-file-formats.md)
+
+## Inspect and cull
+
+- [Star detection and frame quality](./inspect/star-detection-and-frame-quality.md)
+- [Culling frames](./inspect/culling-frames.md)
+- [Review a night](./inspect/review-a-night.md)
+
+## Calibration
+
+- [How calibration is assigned](./calibration/how-calibration-is-assigned.md)
+- [Flat epochs](./calibration/flat-epochs.md)
+- [Flat quality verdicts](./calibration/flat-quality-verdicts.md)
+- [When calibration is not applied](./calibration/when-calibration-does-not-bind.md)
 
 ## Help
 

@@ -23,7 +23,7 @@ Open a session. This is the first real payoff: one screen showing the target and
 
 > **Screenshot:** A session page with the target and filter grid and the calibrated Lights contact sheet.
 
-## 5. Blink through the lights and cull the obvious
+## 5. Flip through the lights and cull the obvious
 
 Open the contact sheet for a filter and step through the subs in the viewer. Reject anything obviously bad: a passing cloud, a trailed sub, a bump. Rejection is reversible, so be aggressive. You can un-reject anything later, and nothing is deleted at this stage.
 
