@@ -13,7 +13,7 @@ The installer is unsigned on every platform. That is expected, not a sign of a c
 
 Windows 10 or later, x64.
 
-Download: `https://downloads.eigenframe.darkflats.com/win/EigenFrame.Desktop-Setup.exe`
+Download: [https://downloads.eigenframe.darkflats.com/win/EigenFrame.Desktop-Setup.exe](https://downloads.eigenframe.darkflats.com/win/EigenFrame.Desktop-Setup.exe)
 
 Run the installer. Windows SmartScreen will show a blue "Windows protected your PC" screen because the app is unsigned.
 
@@ -21,13 +21,13 @@ Run the installer. Windows SmartScreen will show a blue "Windows protected your 
 
 Click **More info**, then **Run anyway**. This is a one-time step for the initial install; future updates apply automatically and do not trigger SmartScreen again.
 
-EigenFrame's viewer runs inside the WebView2 runtime, which ships with Windows 11 and most recent Windows 10 installs. If the app window opens blank, your machine is missing it. Install the free Evergreen bootstrapper from `https://developer.microsoft.com/microsoft-edge/webview2/` and relaunch EigenFrame.
+EigenFrame's viewer runs inside the WebView2 runtime, which ships with Windows 11 and most recent Windows 10 installs. If the app window opens blank, your machine is missing it. Install the free Evergreen bootstrapper from [https://developer.microsoft.com/microsoft-edge/webview2/](https://developer.microsoft.com/microsoft-edge/webview2/) and relaunch EigenFrame.
 
 ## Linux
 
 x64, distributed as an AppImage. No installation step.
 
-Download: `https://downloads.eigenframe.darkflats.com/linux/EigenFrame.Desktop-Setup.AppImage`
+Download: [https://downloads.eigenframe.darkflats.com/linux/EigenFrame.Desktop-Setup.AppImage](https://downloads.eigenframe.darkflats.com/linux/EigenFrame.Desktop-Setup.AppImage)
 
 Mark the file executable and run it:
 
@@ -42,7 +42,7 @@ No package manager, no elevated privileges, no browser warning to click through.
 
 Apple Silicon (arm64) only. There is no Intel build.
 
-Download: `https://downloads.eigenframe.darkflats.com/osx/EigenFrame.Desktop-Setup.pkg`
+Download: [https://downloads.eigenframe.darkflats.com/osx/EigenFrame.Desktop-Setup.pkg](https://downloads.eigenframe.darkflats.com/osx/EigenFrame.Desktop-Setup.pkg)
 
 The installer is unsigned, so Gatekeeper blocks a normal double-click on first run.
 

@@ -9,7 +9,7 @@ Find the symptom below.
 
 ## The window is blank on Windows
 
-EigenFrame renders through the WebView2 runtime. Windows 11 and recent Windows 10 updates ship it already; an older or locked-down Windows install may not have it, and the window stays blank on launch. Install the free Evergreen bootstrapper from `https://developer.microsoft.com/microsoft-edge/webview2/` and relaunch. See [Installing EigenFrame](../start/install.md).
+EigenFrame renders through the WebView2 runtime. Windows 11 and recent Windows 10 updates ship it already; an older or locked-down Windows install may not have it, and the window stays blank on launch. Install the free Evergreen bootstrapper from [https://developer.microsoft.com/microsoft-edge/webview2/](https://developer.microsoft.com/microsoft-edge/webview2/) and relaunch. See [Installing EigenFrame](../start/install.md).
 
 ## macOS will not open it
 

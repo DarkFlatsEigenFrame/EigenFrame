@@ -12,6 +12,9 @@ export default defineConfig({
       description:
         'How to use EigenFrame, the local astrophotography preprocessing app for monochrome XISF and FITS libraries.',
       sidebar: [
+        // The site title links to the guide's own home, so without this there is no way back to
+        // the product site for anyone who arrived from it.
+        { label: 'eigenframe.darkflats.com', link: 'https://eigenframe.darkflats.com/' },
         { label: 'Get started', autogenerate: { directory: 'start' } },
         { label: 'Your library', autogenerate: { directory: 'library' } },
         { label: 'Inspect and cull', autogenerate: { directory: 'inspect' } },
