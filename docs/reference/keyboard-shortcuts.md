@@ -50,9 +50,11 @@ Works while the **Integrate aligned frames** panel has keyboard focus.
 
 | Key | Action |
 |---|---|
-| **[** or **←** | Previous candidate frame |
-| **]** or **→** | Next candidate frame |
+| **[** or **←** | Previous candidate settings |
+| **]** or **→** | Next candidate settings |
 | **Escape** | Close the panel |
+
+Holding a compare slot flips the preview to it and releasing flips back, the same gesture the Alignment Viewer uses for the reference frame.
 
 See [integrate aligned frames](../stack/integrate-aligned-frames.md).
 

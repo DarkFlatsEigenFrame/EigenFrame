@@ -29,6 +29,7 @@ This is state you set yourself. Losing it means redoing work, not just waiting o
 - Stored alignment [fits](./glossary.md#fit), [accepted](./glossary.md#accepted) decisions, and saved match/distortion tuning
 - Integration [presets](./glossary.md#preset)
 - Frame [rejections](./glossary.md#reject-and-un-reject)
+- Remembered view preferences: your filter selections, collapsed panels, and stacking lab toggles
 
 ## What just costs time to rebuild
 
@@ -49,7 +50,7 @@ The tile cache can be relocated to a folder of its own outside `EigenFrame`, so 
 
 Quit EigenFrame, delete the `EigenFrame` folder, then start it again. Your frames, masters, and stacks are untouched.
 
-You lose everything in the first list above: your library folder list, so you'll re-add and re-scan your folders; your calibration assignments, rig settings and logbook, alignment references, fits and tuning, presets, and rejections. Everything in the second list rebuilds on its own once your folders are scanned again.
+You lose everything in the first list above: your library folder list, so you'll re-add and re-scan your folders; your calibration assignments, rig settings and logbook, alignment references, fits and tuning, presets, rejections, and remembered view preferences. Everything in the second list rebuilds on its own once your folders are scanned again.
 
 ## Related
 

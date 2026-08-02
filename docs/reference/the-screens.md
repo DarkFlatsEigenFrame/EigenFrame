@@ -45,7 +45,7 @@ The frame-by-frame fit review for one target and filter: flip between a frame an
 
 ## The integrate panel and stacking lab
 
-A large panel over a target's filter tab, opened with **Integrate aligned frames**: settings on the left, the single-tile stacking lab on the right, and a queue strip below. Tune rejection, normalization, quality weighting and pixel repair against the lab tile before committing the full stack. See [integrate aligned frames](../stack/integrate-aligned-frames.md), [rejection and normalization](../stack/rejection-and-normalization.md), and [stack presets](../stack/stack-presets.md).
+A large panel over a target's filter tab, opened with **Integrate aligned frames**: settings on the left, the single-tile stacking lab on the right, and a queue strip below. Tune rejection, normalization, quality weighting and pixel repair against the lab tile before committing the full stack. The lab holds its preview at one size, with its overlay, stretch, compare and tile controls banked underneath and the measurements below those. See [integrate aligned frames](../stack/integrate-aligned-frames.md), [rejection and normalization](../stack/rejection-and-normalization.md), and [stack presets](../stack/stack-presets.md).
 
 ## The Activity tray
 
