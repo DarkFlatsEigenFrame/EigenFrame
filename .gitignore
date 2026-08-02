@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+# Generated from docs/ by scripts/build-content.mjs on every dev and build.
+src/content/docs/
+.DS_Store
+npm-debug.log*

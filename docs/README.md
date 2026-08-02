@@ -31,17 +31,31 @@ EigenFrame is astrophotography preprocessing for monochrome XISF and FITS librar
 
 ## Your library
 
+- [Library folders](./library/library-folders.md)
+- [Import rules](./library/import-rules.md)
 - [Supported file formats](./library/supported-file-formats.md)
+- [Rigs and equipment groups](./library/rigs-and-equipment-groups.md)
+- [Sessions](./library/sessions.md)
+- [Targets](./library/targets.md)
+- [Artifacts and Unclassified](./library/artifacts-and-unclassified.md)
+- [Offline drives and NAS](./library/offline-drives-and-nas.md)
 
 ## Inspect and cull
 
+- [The image viewer](./inspect/image-viewer.md)
+- [Stretch and histogram](./inspect/stretch-and-histogram.md)
 - [Star detection and frame quality](./inspect/star-detection-and-frame-quality.md)
+- [Transparency](./inspect/transparency.md)
 - [Culling frames](./inspect/culling-frames.md)
 - [Review a night](./inspect/review-a-night.md)
+- [Review a project](./inspect/review-a-project.md)
 
 ## Calibration
 
 - [How calibration is assigned](./calibration/how-calibration-is-assigned.md)
+- [Build bias and dark masters](./calibration/build-bias-and-dark-masters.md)
+- [Build flat masters](./calibration/build-flat-masters.md)
+- [Use masters you built elsewhere](./calibration/use-masters-you-built-elsewhere.md)
 - [Flat epochs](./calibration/flat-epochs.md)
 - [Flat quality verdicts](./calibration/flat-quality-verdicts.md)
 - [When calibration is not applied](./calibration/when-calibration-does-not-bind.md)
@@ -56,11 +70,27 @@ Work these in order. Each step depends on the one before it.
 - [When frames will not align](./stack/when-frames-will-not-align.md)
 - [Integrate aligned frames](./stack/integrate-aligned-frames.md)
 - [Rejection and normalization](./stack/rejection-and-normalization.md)
+- [Quality weighting](./stack/quality-weighting.md)
+- [Pixel repair](./stack/pixel-repair.md)
+- [Stack presets](./stack/stack-presets.md)
 - [Where stacks are saved](./stack/where-stacks-are-saved.md)
+- [Find and manage your stacks](./stack/find-and-manage-your-stacks.md)
+
+## Reference
+
+- [The screens](./reference/the-screens.md)
+- [Settings](./reference/settings.md)
+- [Performance and cache](./reference/performance-and-cache.md)
+- [Updates](./reference/updates.md)
+- [Diagnostics and telemetry](./reference/diagnostics-and-telemetry.md)
+- [Where EigenFrame stores its data](./reference/where-eigenframe-stores-its-data.md)
+- [Glossary](./reference/glossary.md)
+- [Keyboard shortcuts](./reference/keyboard-shortcuts.md)
 
 ## Help
 
 - [Troubleshooting](./help/troubleshooting.md)
 - [Reporting a problem](./help/reporting-a-problem.md)
+- [FAQ](./help/faq.md)
 
 These pages document the current release. EigenFrame updates itself, so keep the app current and the pages will match what you see.

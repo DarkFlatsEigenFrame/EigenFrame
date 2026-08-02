@@ -1,6 +1,8 @@
 ---
-title: Reporting a problem
-description: How to file an EigenFrame problem report that can be acted on: where it goes, what to check first, and what to include from the app's Diagnostics panel.
+title: Something is wrong. How do I report it?
+sidebar:
+  label: Reporting a problem
+description: "How to file an EigenFrame problem report that can be acted on: where it goes, what to check first, and what to include from the app's Diagnostics panel."
 ---
 
 # Something is wrong. How do I report it?

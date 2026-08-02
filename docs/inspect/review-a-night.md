@@ -9,7 +9,7 @@ The session page is where you work one night's data. This page walks through it 
 
 ## Find the night
 
-Open Sessions from the library nav to see every night you've cataloged, newest first. A session is one night for one rig, so if you ran two setups on the same night, that's two sessions, each with its own card and its own page. Click a date to open it.
+Open Sessions from the library nav to see every night you've cataloged, newest first. A session is one night for one rig, so a night you ran two setups on holds two sessions; the list shows one card per date, tagged with how many setups it covers and broken out per rig inside. Click a date to open it.
 
 The session page shows one rig at a time. If more than one rig shot that night, a selector in the top right switches between them; picking one jumps the date scrubber to that rig's own history, since two rigs rarely observe on exactly the same nights. See [what determines the session date](../help/troubleshooting.md#my-session-date-is-a-day-off) if a night's date looks off by one.
 

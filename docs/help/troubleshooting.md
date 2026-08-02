@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-description: Fixes for common EigenFrame problems: blank windows, failed scans, misclassified frames, unapplied flats, stalled stacks, cache pressure, and performance tuning.
+description: "Fixes for common EigenFrame problems: blank windows, failed scans, misclassified frames, unapplied flats, stalled stacks, cache pressure, and performance tuning."
 ---
 
 # Troubleshooting

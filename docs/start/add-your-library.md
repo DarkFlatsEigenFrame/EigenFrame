@@ -3,7 +3,7 @@ title: Add your library
 description: Point EigenFrame at the folder where your captures already live, set the four intake options on it, and start your first scan. Nothing is moved or copied.
 ---
 
-# Add your library folder
+# Add your library
 
 When EigenFrame launches, it opens on **Targets**, empty. The empty state's call to action is **Manage Library**, also reachable any time from the gear menu at the top right.
 
