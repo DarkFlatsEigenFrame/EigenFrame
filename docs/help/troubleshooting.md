@@ -75,7 +75,7 @@ A stack fails when one of its source frames couldn't be prepared, usually a deco
 
 Performance Settings has the levers:
 
-- **Read Concurrency**, how many whole-frame reads run in parallel for tile and thumbnail builds. Lower it for a library on a spinning disk or a network share.
+- **Read Concurrency**, how many whole-frame reads run in parallel for tile and thumbnail builds, counted per drive. Lower it for a library on a spinning disk. Network shares and cloud sources read 16 at a time, or this value when set higher.
 - **Compute Concurrency**, tile build threads. Defaults to your CPU count, capped at 16.
 - **In-Flight Memory Budget**, the ceiling on memory held by reads in progress. Reads back off once this fills rather than piling up.
 

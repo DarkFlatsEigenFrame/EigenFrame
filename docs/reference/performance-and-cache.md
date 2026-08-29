@@ -15,7 +15,7 @@ Open **Performance Settings** from the gear menu. Every setting there applies im
 
 | Label | Controls | Default | Env override |
 |---|---|---|---|
-| Read Concurrency | Parallel whole-frame reads for tile and thumbnail builds | 3 | `EIGENFRAME_READ_CONCURRENCY` |
+| Read Concurrency | Parallel whole-frame reads for tile and thumbnail builds, counted per drive. Network shares and cloud sources read 16 at a time, or this value when set higher | 3 | `EIGENFRAME_READ_CONCURRENCY` |
 | Scan Concurrency | Library-scan workers per drive or share | 0 (automatic: 4 on a local drive, 16 on a network share) | `EIGENFRAME_SCAN_CONCURRENCY` |
 | Compute Concurrency | Tile build threads | CPU count, capped at 16 | `EIGENFRAME_COMPUTE_CONCURRENCY` |
 | Stack jobs (concurrent) | Calibration stacking jobs running at once | 4 | none |
@@ -38,7 +38,7 @@ The screen warns you if Read Concurrency and Compute Concurrency are both 2 or b
 
 ## A library on a spinning disk or a network share
 
-Lower Read Concurrency. Many concurrent whole-frame reads make a spinning disk seek between them instead of staying on one track, so a small number keeps the head busy without thrashing. Scan Concurrency already treats network shares differently from local drives by default (16 workers instead of 4), because scanning is many small header reads rather than a few large ones; raise or lower it if that default doesn't fit your share.
+Read Concurrency is counted per drive, so a library split across several drives reads from each of them in parallel and a slow share never holds back a local disk. On a local drive, lower it if the disk thrashes: many concurrent whole-frame reads make a spinning disk seek between them instead of staying on one track, and a small number keeps the head busy. A network share or cloud source is bound by round-trip latency rather than seeking, so it reads 16 frames at a time whatever Read Concurrency is set to below that; setting Read Concurrency above 16 raises the share's parallelism along with everything else. Scan Concurrency treats network shares the same way by default (16 workers instead of 4), because scanning is many small header reads rather than a few large ones; raise or lower it if that default doesn't fit your share.
 
 ## A memory-tight machine
 
