@@ -27,7 +27,7 @@ It reads top to bottom in three bands. The tile preview holds one size whatever 
 
 **Overlays.** **rejection** tints each pixel by how many samples got clipped there, so a satellite trail reads as a red streak that shrinks as you tighten high sigma. **repair** tints hot repairs red and cold repairs blue, so a sensor defect reads as a tight cluster and a star being eaten reads as repairs sitting on bright cores. **norm** paints the localized normalization's correction across the tile, warm where it adds flux and cool where it removes it. **off** leaves the tile plain.
 
-**Stretch.** The histogram under the preview is a display stretch for the lab, shared by every slot you compare, so two settings are always judged through the same transfer. Drag it up and down: the foot sets the black point, the curve lifts the faint end. It changes nothing about what gets stacked.
+**Stretch.** The histogram under the preview is a display stretch for the lab, shared by every slot you compare, so two settings are always judged through the same transfer. Drag it up and down: the feet set the black and white points, the curve lifts the faint end. It changes nothing about what gets stacked.
 
 **Tile selector.** The grid over your reference frame picks which output tile is stacked. Move it around the field to check the settings somewhere else, a bright core, a dust lane, an empty corner. A number in a cell counts the settings already stacked there, so you can tell at a glance which tiles are cheap to revisit.
 

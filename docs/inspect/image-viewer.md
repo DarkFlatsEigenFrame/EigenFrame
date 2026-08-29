@@ -30,7 +30,7 @@ It costs more: those tiles are larger, they are fetched on demand as you pan, an
 
 The second **View** toggle, on by default, controls where the display stretch takes its levels from. On, the whole frame uses one tone map, so brightness is consistent corner to corner and two parts of the image are directly comparable. Off, each tile maps its own pixel statistics, which lifts faint local structure but means brightness no longer compares across the frame.
 
-The stretch itself, black clip and stretch factor, lives further down the same panel. See [stretch and histogram](./stretch-and-histogram.md).
+The stretch itself, black point, stretch factor and white point, lives further down the same panel. See [stretch and histogram](./stretch-and-histogram.md).
 
 ## Calibrated or raw
 
