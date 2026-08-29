@@ -39,7 +39,7 @@ This is the sharpest tool on the page. Under each target, a contact sheet of thu
 
 In a sheet where calibration is applied, a fully calibrated set of tiles carries no badge at all. Only the exception, a tile that's still raw while its siblings are calibrated, carries a small muted marker so it stands out as the one to check. Reassign whatever's wrong in the calibration status block above and the thumbnails update.
 
-Each tile also carries the usual culling controls: reject or restore a frame, or delete a rejected one, right from the sheet.
+Each tile also carries the usual culling controls: reject or restore a frame, or delete a rejected one, right from the sheet. A small **i** control on each tile opens that frame's details, capture time, pier side, focuser temp, airmass and rotator among them, useful for pinning down when in the night conditions turned. See [culling frames](./culling-frames.md).
 
 > **Screenshot:** Session page, the target and filter grid with a calibrated Lights contact sheet open.
 
