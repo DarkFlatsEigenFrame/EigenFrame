@@ -31,7 +31,7 @@ Filling only ever touches assignments that are still unassigned. A master you pi
 
 **Dark** matches the same camera signature, plus the light's own exposure time exactly, plus set temperature within a tolerance. The tolerance is per rig and defaults to 7 °C. Among the darks inside the tolerance, the nearest set temperature wins. Nothing outside it is ever chosen automatically.
 
-**Flat** matches the rig, the frame dimensions and binning, and the filter, and it must sit inside the light's epoch. Among those, EigenFrame prefers a master whose pixel statistics are ready, then the nearest night to the light. A flat on the far side of an optical-train change is never assigned automatically. See [how long a flat is good for](./flat-epochs.md).
+**Flat** matches the rig, the frame dimensions and binning, and the filter, and it must sit inside the light's epoch. Among those, EigenFrame prefers a master whose pixel statistics are ready, then the nearest night to the light, then, where masters at more than one rotator angle qualify, the one nearest the light's own angle. The angle preference only ever picks between masters that already qualify: it never disqualifies anything, and a light or master with no recorded angle is matched on the other criteria alone. A flat on the far side of an optical-train change is never assigned automatically. See [how long a flat is good for](./flat-epochs.md).
 
 Which fields the camera signature contains is itself adjustable per rig, on the Equipment page, so a rig whose capture software never writes a readout mode can drop that field from the signature.
 
@@ -59,7 +59,7 @@ A ✓ means assigned, not verified. To see whether the calibration is actually c
 
 ## Overriding one frame
 
-Open a frame in the viewer and go to its **Calibration** tab. Three pickers, one per kind, list every master that matches, ranked, with the automatic choice at the top. Flats are annotated with their night, how many days from this light, how many sub-flats went into them, their median DN, and a warning where one is cross-epoch. The best in-epoch flat carries a ★.
+Open a frame in the viewer and go to its **Calibration** tab. Three pickers, one per kind, list every master that matches, ranked, with the automatic choice at the top. Flats are annotated with their night, how many days from this light, how many sub-flats went into them, their median DN, their rotator angle with the Δ from this light's own angle, and a warning where one is cross-epoch. The best in-epoch flat carries a ★. With a flat assigned, a line beneath the picker states the light's rotator angle, the assigned flat's, and the Δ between them, so you can always see which angle is calibrating which.
 
 Choosing a master, or choosing **None**, applies to the open frame and nothing else. The panel says so. Each picker also offers **re-resolve**, which discards your choice for that one kind and hands it back to automatic resolution.
 

@@ -7,7 +7,7 @@ description: What a flat epoch is, how to mark an optical-train change, and why 
 
 An epoch is the stretch over which one flat still corrects your lights. It ends whenever the optical response changes, whether you did it on purpose (collimating, cleaning, re-spacing) or found it later (a dust mote arriving, moving, or clearing, a shift in vignetting or illumination). Flats from before the change stop matching lights taken after it.
 
-Routine camera rotation between targets usually does not end an epoch. Mark a boundary only if a rotation visibly shifts the vignetting.
+Routine camera rotation between targets usually does not end an epoch. Mark a boundary only if a rotation visibly shifts the vignetting. Rotation is handled within the night instead: flats shot at more than one angle are measured as [rotation groups](./flat-quality-verdicts.md), combined into one master when their surfaces agree and kept apart when they do not, with no epoch boundary either way.
 
 ## Marking a boundary
 

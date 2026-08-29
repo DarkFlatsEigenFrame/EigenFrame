@@ -49,7 +49,7 @@ Edits are a draft until you press **Save rules**, and **Discard** reverts to wha
 
 ## Forward-only by default
 
-Saving rules changes nothing about files already in the catalog. They apply to files as they are scanned from that point on, exactly like the folder's Override and equipment group assignment.
+Saving rules changes nothing about files already in the catalog. They apply to files as they are scanned from that point on, exactly like the folder's Override and equipment group assignment. Saving also checks the records already cataloged under the folder: when the saved rules would change any of them, a count appears beside **Re-apply to existing records…**.
 
 To fix records that already came in wrong, open **Re-apply to existing records…** below the rule list. It is disabled while you have unsaved changes, so save first. Once open, it previews what the currently saved rules would do to every record already cataloged under that folder: how many would be removed, how many would be relabeled, and how many are left untouched. **Re-apply now** starts the pass in the background, with progress on the activity tray. **Cancel** dismisses the preview without applying it.
 

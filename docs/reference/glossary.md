@@ -49,7 +49,7 @@ The rotation, scale, and translation that maps one frame onto the [alignment ref
 
 ## Flat verdict
 
-The badge on a night and filter of flats: **Clean**, **Flagged frames**, **Cloud or veil**, **Possible dew**, or **Boundary candidate**. It says whether that batch is trustworthy on its own and whether it still matches the flats around it. See [flat quality verdicts](../calibration/flat-quality-verdicts.md).
+The badge on a night and filter of flats: **Clean**, **Flagged frames**, **Whole batch suspect**, **Possible dew**, **Rotation groups**, or **Boundary candidate**. It says whether that batch is trustworthy on its own and whether it still matches the flats around it. See [flat quality verdicts](../calibration/flat-quality-verdicts.md).
 
 ## Flip
 
@@ -98,6 +98,10 @@ Walking a [library folder](#library-folder) again and applying what changed: new
 ## Rig
 
 One camera paired with one telescope, discovered from your frame headers as they are scanned. The Equipment page calls it an **equipment group**; the two words mean the same thing. A [session](#session) is one night on one rig, a [target](#target) is one object on one rig, and a flat master is built for one rig, one night, one filter. See [rigs and equipment groups](../library/rigs-and-equipment-groups.md).
+
+## Rotation group
+
+The flats from one night and filter that share one rotator angle. A night shot at more than one angle holds several rotation groups; their surfaces are measured against each other, combined into one master when they agree and built separately when they do not. In build labels and file names a group is named by its position angle (the recorded rotator angle) padded to three digits: `pa074` is the 74° group, and `noang` collects frames with no recorded rotator angle. See [flat quality verdicts](../calibration/flat-quality-verdicts.md).
 
 ## Rough alignment
 

@@ -1,6 +1,6 @@
 ---
 title: How do I build a flat master for a night?
-description: Building one or more flat masters from a night's flats, from the session page or the rig's flat timeline, including the bias picker and the evening/morning split.
+description: Building one or more flat masters from a night's flats, from the session page or the rig's flat timeline, including the bias picker, the evening/morning split, and rotation groups.
 ---
 
 # How do I build a flat master for a night?
@@ -17,13 +17,19 @@ Inside a filter's tab, click **Build flat master**. This opens the build panel, 
 
 ## Building every filter at once
 
-Click **Build All** at the top of the dock to open the same panel scoped to every filter shot that night. It checks off every filter and sky-batch combination that does not already have a master, so one click catches up a night you have not touched yet. Combinations that already have a master start unchecked, so a repeat click does not duplicate work.
+Click **Build all filters** at the top of the dock to open the same panel scoped to every filter shot that night. It checks off every filter and sky-batch combination that does not already have a master, so one click catches up a night you have not touched yet. Combinations that already have a master start unchecked, so a repeat click does not duplicate work.
 
-> **Screenshot:** Flat night dock with filter tabs and the Build All button, one tab showing a completed master and another showing a build in progress.
+> **Screenshot:** Flat night dock with filter tabs and the Build all filters button, one tab showing a completed master and another showing a build in progress.
 
 ## The evening/morning split
 
 A night's flats are shown as one evening batch and one morning batch whenever a large enough gap in capture time separates them. A single unbroken run gives you only the **All** option. Where a split exists, building **All** combines both batches into one master; building **Evening** or **Morning** separately keeps them apart. Flats shot hours apart under a changing sky do not always blend cleanly into one master, so the split lets you build whichever grouping matches what you actually shot.
+
+## Rotation groups
+
+When a filter's flats for the night were shot at more than one rotator angle, the panel offers **Build per rotation group**, naming the groups and their angles, with the measured agreement between their surfaces printed beneath it. Checking it queues one master per rotation group instead of one combined master, and each master's file name carries its group's angle label (for example `pa074`). In the label, `pa` is position angle, the rotator angle recorded on the frames, and the number is that angle in degrees padded to three digits: `pa074` is the 74° group. Frames with no recorded rotator angle form their own group, labeled `noang`.
+
+Which way the checkbox starts depends on what the surfaces measured. When the groups agree, the combined master is the default, since it is the same surface with more frames behind it, and the split stays one click away. When they measure as different surfaces (a [Rotation groups verdict](./flat-quality-verdicts.md)), the split arrives pre-checked: one master per group is the plan for that night, on this panel and on **Build all filters** alike, unless the night is set to **Merge anyway**. If it is, the panel says so next to the checkbox.
 
 ## Culling before you build
 
@@ -51,7 +57,7 @@ Once submitted, the panel switches to a live progress view, one row per master q
 
 ## The result
 
-A flat master is built for one rig, one camera configuration, one filter, and the sky-batch you built it for (all, evening, or morning). It registers in your library the same way any master does, with no separate step: it appears immediately under Masters and on the dock's tab as a green checkmark. From there, [how calibration is assigned](./how-calibration-is-assigned.md) covers how EigenFrame decides which lights it applies to.
+A flat master is built for one rig, one camera configuration, one filter, and the batch you built it for: all, evening, morning, or a single rotation group. A master built from one rotation group records that group's angle, which is what lets calibration assignment hand each light the master nearest its own angle. It registers in your library the same way any master does, with no separate step: it appears immediately under Masters and on the dock's tab as a green checkmark. From there, [how calibration is assigned](./how-calibration-is-assigned.md) covers how EigenFrame decides which lights it applies to.
 
 ## Related
 

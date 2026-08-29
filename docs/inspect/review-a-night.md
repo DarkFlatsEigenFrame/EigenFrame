@@ -45,7 +45,7 @@ Each tile also carries the usual culling controls: reject or restore a frame, or
 
 ## Flats this night
 
-A Flats this night section lists every filter that shot flats on this rig that night, one row per filter, each with its flat count, rejected count, and whether a master has been built from it yet. Flats render raw in their contact sheet. Selecting a row opens a dock with the frames for that filter, that batch's [flat verdict](../calibration/flat-quality-verdicts.md), and the controls to build or manage a master; a link on the section heads to the Flats page for the rig's full history.
+A Flats this night section lists every filter that shot flats on this rig that night, one row per filter, each with its flat count, rejected count, and whether a master has been built from it yet. Flats render raw in their contact sheet. Selecting a row opens a dock with the frames for that filter, that batch's [flat verdict](../calibration/flat-quality-verdicts.md), and the controls to build or manage a master; a link on the section heads to the Flats page for the rig's full history. When a night's flats span more than one rotator angle, the dock also notes the rotation groups, their angles and frame counts, and the measured agreement between their surfaces.
 
 > **Screenshot:** Session page, the Flats this night section with one row's dock open.
 
