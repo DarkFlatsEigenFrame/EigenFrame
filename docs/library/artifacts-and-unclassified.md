@@ -33,6 +33,10 @@ Under Frames × Bias or Frames × Dark, a folder of mixed captures sorts itself 
 
 Selecting frames or a whole group opens a bottom bar with **Reject**, and, on the grouped Bias/Dark view, **Stack →** to build a master from the selection.
 
+## Selecting frames on a flat list
+
+The checkbox in the table header selects every frame on screen. A long list loads as you scroll, so when more frames match the filters than are on screen, a line above the table reads how many of the matching frames are selected and offers **Select all matching**. That extends the selection to every frame the current filters match, loaded or not; frames that scroll in later arrive already selected, and the bottom bar and the editor's **Apply** button both show the full matching count. **Clear selection** on the same line empties the selection. Changing a filter, a tab, a subtype pill, or the **Rejected** switch empties it as well, so an action only ever covers frames you can see the filters for.
+
 ## Fixing what went wrong
 
 Two controls force EigenFrame to re-read a file from disk and reclassify it:
