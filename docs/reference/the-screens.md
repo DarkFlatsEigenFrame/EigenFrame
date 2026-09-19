@@ -49,7 +49,7 @@ A large panel over a target's filter tab, opened with **Integrate aligned frames
 
 ## The Activity tray
 
-A running list of background work, opened from an icon in the header on every screen: scans, re-index passes, star detection, alignment runs, stacks, and update downloads. Open it to watch progress or cancel a job after navigating away from the page that started it.
+A running list of background work, opened from an icon in the header on every screen: scans, re-index passes, star detection, alignment runs, stacks, and update downloads. Open it to watch progress or cancel a job after navigating away from the page that started it. A failed job carries its error on one truncated line; select that line to expand the full text in place, and select it again to collapse it.
 
 ## Manage Library
 

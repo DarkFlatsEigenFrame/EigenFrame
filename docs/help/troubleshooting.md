@@ -71,6 +71,12 @@ For the full decision tree, see [when frames will not align](../stack/when-frame
 
 A stack fails when one of its source frames couldn't be prepared, usually a decode failure on that specific file. The failure names the artifact involved, so you can go straight to it instead of guessing. Reject that source and rerun the stack, or investigate the named file (corrupt download, unsupported variant, damaged on disk) if it's unexpected.
 
+## A flat master build failed
+
+Open that night's filter in the flat dock. A banner at the top reads **✗ build failed**, or **✓ master · last rebuild failed** where an earlier attempt already produced a master, and carries the error text with a **Retry** button beside it. Retry resubmits the same build, and the banner clears once an attempt succeeds. The same night's row under Flats this night reads **✗ last rebuild failed** until then.
+
+A failure that names a source flat is the decode problem described above: reject that frame and retry. The Stacks page holds the full record of the attempt, and in the Activity tray the job's error line expands to its full text when you select it.
+
 ## The app is slow, or it is using all my RAM
 
 Performance Settings has the levers:

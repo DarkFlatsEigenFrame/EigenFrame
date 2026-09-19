@@ -11,9 +11,11 @@ Open a session and scroll to **Flats this night**. Click a filter's row to open 
 
 The dock's tabs switch filters without leaving the dock. A green checkmark on a tab means a master already exists for that filter this night; a pulsing dot means a build is running.
 
+When the most recent build attempt for the open filter ended in failure, a banner sits at the top of the dock reading **✗ build failed**, or **✓ master · last rebuild failed** where an earlier attempt already produced a master, with the error text and a **Retry** button. It stays until an attempt succeeds.
+
 ## Building one filter
 
-Inside a filter's tab, click **Build flat master**. This opens the build panel, scoped to that filter's flats for that config. If evening and morning flats were both shot, the panel offers **All**, **Evening**, and **Morning** as separate checkboxes, each showing its frame count. Check one, two, or all three to queue that many masters.
+Inside a filter's tab, click **Build flat master**. This opens the build panel, scoped to that filter's flats for that config. While a build for that filter is in flight, the button's place is taken by a pulsing **Queued…** or **Building…**, with a **Cancel** beside it, so a second click cannot start a duplicate. If evening and morning flats were both shot, the panel offers **All**, **Evening**, and **Morning** as separate checkboxes, each showing its frame count. Check one, two, or all three to queue that many masters.
 
 ## Building every filter at once
 
@@ -52,6 +54,8 @@ If no bias master matches at all, **No bias correction** is the only usable opti
 Click the build button and a pre-flight check runs first: it verifies the source flats are ready and, if you picked a bias master, that it is ready too and its geometry matches. A clean pre-flight submits immediately. A pre-flight with only warnings, such as an unusually small or large frame count, asks for one more click before it submits; anything blocking, such as a bias master whose geometry does not match, keeps that unit from submitting until you fix it or drop the bias.
 
 Once submitted, the panel switches to a live progress view, one row per master queued: preparing source frames, splitting into tiles, combining, then saving the finished master as XISF. A completed row links straight to the Stacks page; a failed one tells you to check there for details.
+
+Submitting a build that matches one already queued, the same frames and the same settings, tracks that job rather than starting a second one, and its row is marked **· already queued**. Submitting a build that conflicts with one already queued for the same slot lists it under **This master was not started** with the reason, and offers **Cancel the queued build and submit this one**. Where the queued build has already started combining, the panel says so and points you to the Stacks page to cancel it there.
 
 > **Screenshot:** Build panel showing live progress bars for two masters, one preparing and one combining.
 

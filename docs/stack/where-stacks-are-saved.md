@@ -11,7 +11,9 @@ Every stack, calibration master or integrated light, is written to a path built 
 
 ## The four templates
 
-There is one template per frame type: Bias, Dark, Flat, and Light. Each is a path, not just a filename: literal text, `/` separators, and variable tokens that together describe the whole directory structure and name EigenFrame writes into. The `.xisf` extension is appended for you.
+There is one template per frame type: Bias, Dark, Flat, and Light. Each is a path, not just a filename: literal text, separators, and variable tokens that together describe the whole directory structure and name EigenFrame writes into. The `.xisf` extension is appended for you.
+
+A template is written and stored with `/` separators, which is what keeps one portable between machines. The preview under the field, and the greyed-out placeholder in an empty field, render the separator your own platform writes, so a Windows machine shows `\` there. Pasting a path that uses `\` into a template field works: it is accepted and kept in the `/` form.
 
 The default Light template, used for integrated lights, is:
 

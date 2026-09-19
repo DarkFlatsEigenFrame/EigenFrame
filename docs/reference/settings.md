@@ -78,6 +78,8 @@ From **Stack Outputs** in the gear menu, one template per frame type, plus a per
 
 A per-rig override is blank by default, which inherits the template above.
 
+Template syntax uses `/` separators, as shown above. The preview beneath each field renders the separator your own platform writes.
+
 ## Diagnostics
 
 The **Send diagnostics** toggle and its connection string live at the bottom of Performance Settings. See [diagnostics and telemetry](./diagnostics-and-telemetry.md).

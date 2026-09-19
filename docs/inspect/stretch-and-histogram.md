@@ -11,11 +11,11 @@ A linear frame is almost all near-black pixels with faint signal buried close to
 
 ## The widget
 
-The widget draws the frame's histogram with the current transfer curve over it. Three handles sit on it, and all three drag vertically.
+The widget draws the frame's histogram with the current transfer curve over it. Three handles sit on it. The two feet drag horizontally along the intensity axis, rightward to increase; the handle on the curve drags vertically. The readout beneath the widget states it as *drag ↔ feet: black / white point · drag ↕ curve: faint lift*.
 
-- **Black point** (the foot at the bottom, at the dark end). Drag up to clip more of the shadow away; drag down to lift the noise floor into view. Reads as *black* in MAD units below the median.
-- **Stretch factor** (the dot on the curve, over the median). Drag up to brighten faint signal further; drag down to pull it back. Reads as *stretch*, a target background level.
-- **White point** (the grip at the top, at the bright end). Drag up for more highlight headroom, which keeps star cores and bright nebulosity off pure white; drag down to bring the bright end in and raise contrast. Reads as *white* in MAD units above the median.
+- **Black point** (the blue foot at the baseline, at the dark end). Drag right to clip more of the shadow away; drag left to lift the noise floor into view. Reads as *black* in MAD units below the median.
+- **Stretch factor** (the yellow dot on the curve, over the median). Drag up to brighten faint signal further; drag down to pull it back. Reads as *stretch*, a target background level.
+- **White point** (the pale grip at the top of the axis, at the bright end). Drag right for more highlight headroom, which keeps star cores and bright nebulosity off pure white; drag left to bring the bright end in and raise contrast. Reads as *white* in MAD units above the median.
 
 All three are relative to the frame's own median and MAD, so the same handle positions look right across frames of different exposure and background level without re-anchoring by hand.
 

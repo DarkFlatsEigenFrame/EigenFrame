@@ -31,7 +31,7 @@ The grid lists each target shot that night as a row, with a column per filter. E
 
 Beneath the grid, a status block reports what happened when the assignments were checked. Opening the night triggers a fill pass that assigns any bias, dark, or flat that was still unassigned, which is why this block can change a second after the page loads: it starts by reporting how many frames it just assigned, then lists anything it could not resolve, with the reason and a link to fix it.
 
-Two actions sit next to the status: **Autodetect calibration** re-points only the frames whose assignment has gone bad (a rejected or missing master, or a flat that's now on the wrong side of an optical-train change), and **Reset & reassign calibration** discards every assignment in scope, including ones you set by hand, and starts over. See [how EigenFrame decides which masters calibrate which lights](../calibration/how-calibration-is-assigned.md) for how an assignment is chosen and what each status line means.
+Two actions sit next to the status: **Autodetect calibration** re-points only the frames whose assignment has gone bad (a rejected or missing master, or a flat on the wrong side of an optical-train change), and **Reset & reassign calibration** discards every assignment in scope, including ones you set by hand, and starts over. See [how EigenFrame decides which masters calibrate which lights](../calibration/how-calibration-is-assigned.md) for how an assignment is chosen and what each status line means.
 
 ## The Lights contact sheets
 
@@ -45,7 +45,7 @@ Each tile also carries the usual culling controls: reject or restore a frame, or
 
 ## Flats this night
 
-A Flats this night section lists every filter that shot flats on this rig that night, one row per filter, each with its flat count, rejected count, and whether a master has been built from it yet. Flats render raw in their contact sheet. Selecting a row opens a dock with the frames for that filter, that batch's [flat verdict](../calibration/flat-quality-verdicts.md), and the controls to build or manage a master; a link on the section heads to the Flats page for the rig's full history. When a night's flats span more than one rotator angle, the dock also notes the rotation groups, their angles and frame counts, and the measured agreement between their surfaces.
+A Flats this night section lists every filter that shot flats on this rig that night, one row per filter, each with its flat count, rejected count, and whether a master has been built from it yet. A row reads **✓ master built**, or **no master yet**, or a pulsing **queued…** or **building…** while a build is in flight, or **✗ last rebuild failed** where the most recent attempt failed. Open that row for the error text and a Retry. Flats render raw in their contact sheet. Selecting a row opens a dock with the frames for that filter, that batch's [flat verdict](../calibration/flat-quality-verdicts.md), and the controls to build or manage a master; a link on the section heads to the Flats page for the rig's full history. When a night's flats span more than one rotator angle, the dock also notes the rotation groups, their angles and frame counts, and the measured agreement between their surfaces.
 
 > **Screenshot:** Session page, the Flats this night section with one row's dock open.
 
