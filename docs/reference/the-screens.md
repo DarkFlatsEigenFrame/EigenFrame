@@ -19,7 +19,7 @@ A list of every night you have cataloged, newest first, one card per date. Click
 
 ## Artifacts
 
-A single table of everything in the catalog: three tabs for Frames, Masters, and Unclassified, four subtype pills under Frames and Masters, and a filter bar for narrowing by camera signature. This is where you fix files that came in wrong and manage frames in bulk rather than inspect one night. See [artifacts and Unclassified](../library/artifacts-and-unclassified.md).
+A single table of everything in the catalog: three tabs for Frames, Masters, and Unclassified, four subtype pills under Frames and Masters, and a filter bar for narrowing by file path, object name, or camera signature. This is where you fix files that came in wrong, correct object names and filters in bulk, and manage frames in bulk rather than inspect one night. See [artifacts and Unclassified](../library/artifacts-and-unclassified.md).
 
 ## Stacks
 

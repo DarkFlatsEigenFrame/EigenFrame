@@ -19,7 +19,9 @@ Frames × Bias/Dark is the one perspective that groups: matching frames collapse
 
 ## The filter bar
 
-Below the category tabs sits a **Rejected** control, and under it a row of match filters: Instrument, Camera ID, Gain, Offset, Readout, X Bin, Y Bin, Width, Height, ISO, USB. Two more, Exp (s) and Set °C, appear only on the Dark subtype. Each filter narrows the list as you type. **Clear** resets all of them at once and shows how many are active.
+Below the category tabs sits a **Rejected** control, and under it a row of filters: File path, Instrument, Camera ID, Gain, Offset, Readout, X Bin, Y Bin, Width, Height, ISO, USB. Two more, Exp (s) and Set °C, appear only on the Dark subtype, and **Object** appears only on the Light subtype. Each filter narrows the list as you type. **Clear** resets all of them at once and shows how many are active.
+
+**File path** matches any part of a frame's full path, folder names included, so typing a project folder's name isolates every frame stored under it. It is also the one filter that finds an Unclassified file, which usually has no other header to match on. **Object** matches any part of the object header; each light row also shows its object name under the file name.
 
 ## The rejection lens
 
@@ -39,6 +41,8 @@ Two controls force EigenFrame to re-read a file from disk and reclassify it:
 - **Reclassify all errored**, a bulk button above the Unclassified list, re-reads every file currently stuck in a read error at once.
 
 For masters that arrived without the fields calibration matching needs (common for a master built outside EigenFrame, which typically carries none of the camera-signature header), select one or more rows, or an entire group, and use **Edit / reclassify** (or a group's own **Set match fields**) to fill in instrument, gain, offset, readout, binning, and the rest by hand. See [how calibration is assigned](../calibration/how-calibration-is-assigned.md) for what each of those fields does and how a missing one affects matching.
+
+When every selected row is a light, the same editor offers two more fields, **Object** and **Filter**, for correcting what the capture software wrote. A field left blank is left alone on every frame. Setting a new object name moves the selected frames to that target: the Targets list re-groups on the next read, the moved frames lose their alignment fits and are screened again on the new target, and a session that contained them lists them under the new name. Changing the filter moves the frames to that filter's tab on their target. See [why do I have two M31 cards](./targets.md) for the case where one object name spans two projects.
 
 ## Where Unclassified comes from
 

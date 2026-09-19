@@ -13,6 +13,8 @@ EigenFrame takes the object string straight from the frame's header. It is not n
 
 Two spellings of the same object name in your capture software (`M31` versus `M 31`) produce two separate target cards with no way in EigenFrame to merge them, so keep the object field consistent across a target's sessions.
 
+The same rule read the other way: one object name used for two different projects (a `Panel 2` in a Veil Nebula folder and a `Panel 2` in a Heart and Soul folder, on the same rig) lands both sets of lights on one target card. To separate them, rename the object on one set: open **Artifacts**, pick Frames and the Light subtype, type part of the folder path into the **File path** filter to isolate one project's frames, select them, and use **Edit / reclassify** to set a new object name. The Targets list then shows one card per name. Frames that move to a new name lose their alignment fits and are screened again on the new target.
+
 ## No object name
 
 A light with no object header at all is grouped under `Unknown Target` rather than left out of the catalog. It still gets a target card, on whichever rig it matched, and behaves like any other target from there.
