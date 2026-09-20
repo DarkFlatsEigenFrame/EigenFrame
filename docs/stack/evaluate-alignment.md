@@ -59,6 +59,14 @@ Looking is the intended first move. A frame here has told you something, and the
 
 > **Screenshot:** The Needs attention panel with its flagged thumbnails and the Review action.
 
+### Aligned, corners drift
+
+A second, separately labelled group sits in the same panel, for frames that locked onto the reference and stay green: **Aligned, corners drift**, with a count and, where your frames record which side of the meridian they were shot on, a breakdown by side.
+
+> These frames lined up on the reference and count as aligned, the stars just sit up to about 2.4 px off near the edges while the middle stays tight. That is usually the field itself, low in the sky or flipped across the meridian, rather than a bad match. Nothing to fix here.
+
+The group rejects nothing, offers nothing for rejection, and takes nothing out of the stack. It exists so a field that a plain rotation, scale and translation cannot quite express is visible rather than silent. **Take a look** opens the first of these in the [Alignment Viewer](./alignment-viewer.md), where the corners grid shows the same thing in pixels. [When frames will not align](./when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift) covers the two things worth doing about it.
+
 ## Rig tolerances
 
 What counts as out of band is per rig, on the Equipment page, under **Alignment tolerances**:

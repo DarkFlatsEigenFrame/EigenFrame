@@ -39,10 +39,11 @@ Suppressed while a text field has focus.
 | **→** | Next frame |
 | **Space** (hold) | Flip to the reference frame; release to flip back |
 | **M** | Toggle the matched-pair vector overlay |
+| **G** | Toggle the corners grid |
 | **R** | Reject or restore the frame on screen |
 | **Escape** | Close the viewer |
 
-See [the Alignment Viewer](../stack/alignment-viewer.md).
+Pan and zoom are off while the corners grid is on. See [the Alignment Viewer](../stack/alignment-viewer.md).
 
 ## Stacking lab
 

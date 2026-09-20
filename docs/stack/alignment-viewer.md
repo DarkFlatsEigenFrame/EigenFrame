@@ -23,6 +23,24 @@ Press **M**, or the **matches** toolbar button, to overlay the matched-pair vect
 
 > **Screenshot:** The matched-pair overlay on a frame, showing matched and unmatched stars.
 
+## Looking at the corners
+
+Press **G**, or the **corners** toolbar button, to swap the single canvas for a grid of nine cells: the four corners of the field, the four edge midpoints, and the center, all side by side at 1:1. A field that is sharp in the middle and drifting at the edges reads at a glance here, which is the thing a single framed view hides.
+
+The nine cells are fixed windows onto the reference canvas, so pan and zoom are off while the grid is on, and a label on the canvas says so. Leaving the grid returns you to the framing you had.
+
+Everything else keeps working: hold **Space** to flip all nine cells to the reference at once, scrub or arrow through frames, press **R** to reject, and **Accept this fit** and **Reset** act on the frame on screen as they always do. The matched-pair overlay draws per cell.
+
+> **Screenshot:** The corners grid on a frame whose center is tight and whose corners are offset.
+
+### corners drift
+
+Under the verdict, a frame whose stars sit tight in the middle and a couple of pixels off near the edges carries an extra amber line:
+
+`corners drift ~2.4 px`
+
+This is advisory and nothing else. The frame is aligned, it stays aligned, it stays in the stack, and the verdict above it is unchanged. It is there because a plain rotation, scale and translation cannot express a field that is stretched more along one axis than the other, which is what refraction low in the sky and optics turned by a meridian flip both produce. [When frames will not align](./when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift) covers what to do about it.
+
 ## Reading the badge
 
 The top-left badge states the verdict for what's on screen, in the same language as the filter's [per-frame states](./evaluate-alignment.md#the-five-per-frame-states):
@@ -54,13 +72,32 @@ The controls panel carries the same matching parameters Evaluate alignment uses:
 
 A banner above the sliders reports the honest outcome of that live fit as you tune: whether it landed, how many stars matched and how many of those the fit trusted, and how tightly they agree. If the tuned fit fails or reads as an out-of-range framing, the banner says so plainly and reminds you that the canvas is still showing the raw or rough fallback, not the fit you just produced.
 
-Distortion correction options sit below the matching settings: a kernel choice, a support factor, and a regularization amount. Turning one on previews a locally warped version of the current frame at preview resolution, which is where you judge whether field distortion is worth correcting for.
+Distortion correction options sit below the matching settings: a kernel choice, a support factor, and a regularization amount. A fit made with one of these carries a warp field alongside its rotation, scale and translation, and that warp is what straightens a field the plain fit cannot express.
+
+While you are still tuning, the fit is not saved anywhere, so the canvas draws its plain part only and says so:
+
+`Distortion correction not shown until this fit is accepted`
+
+**Accept this fit** to save it. From then on the viewer draws that frame already warped into the reference's own canvas, corners included, and every stack built on it applies the same warp to the pixels it combines. The residual field block in the diagnostics panel is how you judge whether the correction is worth having before you accept.
 
 **Save for this filter** stores the current slider values against the filter; frames don't re-fit until you also **Apply to set**, which saves and then re-evaluates every frame in the filter with those settings, or until you next run [Evaluate alignment](./evaluate-alignment.md).
 
 ## The diagnostics panel
 
 Below the controls sits a diagnostics panel: deliberately technical, deliberately dense, and meant to be copied rather than read as prose. It names the frame and reference by id, states the verdict, lists the matching parameters in effect, and gives the fitted transform as scale, rotation and translation. Underneath that it reports the match statistics behind the fit, matched star pairs, inlier ratio, residual RMS, and, for a fit flagged as out of range, exactly which axis failed the rig's expected transform and by how much. When distortion correction is active it adds the distortion residuals too.
+
+A **residual field** block says where in the frame the error sits, and how much of it a linear model accounts for:
+
+```
+residual field (stored):
+  center third    0.412 px rms
+  outer third     2.640 px rms
+  anisotropy      x 0.981% · y -0.204%
+  affine residual 0.508 px rms
+  post-rbf        0.372 px rms
+```
+
+The two thirds are the residual RMS inside the central third of the field against the outer third, so an outer figure several times the center is the corner drift stated as a number. The anisotropy is the per-axis scale a least-squares affine fits to the residuals, and a figure well away from zero on one axis alone is the signature of a field compressed along one direction. The affine residual is what that linear model leaves behind, and `post-rbf` is the residual left after distortion correction, so a figure well under the outer third says the warp is earning its place. The block reads from the live fit while you are tuning and from the stored fit otherwise, and says which.
 
 **Copy** puts the whole block on the clipboard. This is what to paste into a problem report or into a conversation about a fit that isn't behaving: it carries everything needed to reproduce the read, no screenshot required.
 

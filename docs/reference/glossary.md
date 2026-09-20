@@ -31,6 +31,10 @@ The umbrella term for anything in the catalog: a raw frame, a [master](#master),
 
 Which bias, dark, and flat [master](#master) applies to a given light. Every light carries three independent assignments, each either unassigned, deliberately none, or a specific master. See [how calibration is assigned](../calibration/how-calibration-is-assigned.md).
 
+## Corners grid
+
+Nine fixed cells in the Alignment Viewer, the four corners of the field, the four edge midpoints and the center, all drawn side by side at 1:1. **G** toggles it. It is where a fit that holds in the middle and drifts at the edges becomes visible. See [judging a fit yourself](../stack/alignment-viewer.md).
+
 ## Delete
 
 Removal of a file from disk. Permanent, confirmed, with no recycle step. The only action in EigenFrame that changes your files. Contrast [reject](#reject--un-reject).
@@ -74,6 +78,10 @@ A folder you have pointed EigenFrame at. It indexes the files where they sit; no
 ## Master
 
 A combined calibration or integrated frame: a master bias, dark, or flat, or a stacked Light master. A master registers the same way whether EigenFrame built it or you brought it in.
+
+## Mount side
+
+Which side of the meridian a frame was shot on, East or West, read from the frame header. A flip turns the camera 180° in the field, so the two sides can carry different corner distortion; the integrate panel can stack one side at a time. See [how do I stack](../stack/integrate-aligned-frames.md#stacking-one-side-of-the-meridian).
 
 ## Optical-train change
 

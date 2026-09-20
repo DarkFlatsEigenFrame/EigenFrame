@@ -44,6 +44,7 @@ A required token like `{Gain}` expands to that value, or to `(none)` in the prev
 | `{.SensorTemp?}` | Average sensor temperature |
 | `{.Filter?}` | Filter name |
 | `{.SkyBatch?}` | Flat batch label: evening, morning, or a rotation group's position angle (`pa074` is the 74° group; `noang` means no recorded rotator angle; a night split both ways gives `evening-pa074`) |
+| `{.PierSide?}` | Mount side, where every frame in the stack shares one: `East` or `West` |
 | `{NCombine}` | Number of source frames combined |
 | `{XBinning}` | X binning |
 | `{YBinning}` | Y binning |

@@ -51,6 +51,18 @@ Mosaic stays available while comparing, so you can flip A against B across the w
 
 If the frame set for this filter is mixed, some frames fully calibrated and some missing a valid flat or carrying a suspect one, the panel shows how many of each and defaults to stacking only the fully-calibrated frames. Including the rest is an explicit opt-in: check **Include uncalibrated / suspect-calibrated frames** to add them, or use **Show the affected frames** to jump to the Ranking tab and see exactly which ones are in question first.
 
+## Stacking one side of the meridian
+
+Where the frames for this filter come from both sides of the meridian, a **Mount side** selector appears in the settings column with a count on each option: **Both sides**, **East**, **West**. It is absent when every frame sits on one side, since there is nothing to choose.
+
+Picking a side stacks that side alone. The counts are the frames that would actually go in, so the number on the button is the number **Integrate N frames** commits to. The lab tile restacks against the chosen side too, and the choice is recalled with the rest of the settings and saved into a preset like any other.
+
+Reach for this when a filter's corners drift in opposite directions on either side of a flip: two masters, one per side, keep two different corner patterns out of one average. See [the center is sharp but the corners drift](./when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift).
+
+The alignment reference stays the output canvas whichever side you stack, so both masters land on the same geometry. Its own pixels are combined in only when it sits on the side you picked.
+
+A stack whose frames all share one side names itself with that side where the output template carries the `{.PierSide?}` token. See [where stacks are saved](./where-stacks-are-saved.md).
+
 ## Committing the stack
 
 **Integrate N frames** at the bottom of the panel submits the stack, where N is the frame count actually going in, the fully-calibrated set alone unless you opted the rest in. The panel stays open after you submit, so you can watch it or start dialing in the next filter.
