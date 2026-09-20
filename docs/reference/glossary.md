@@ -39,6 +39,10 @@ Nine fixed cells in the Alignment Viewer, the four corners of the field, the fou
 
 Removal of a file from disk. Permanent, confirmed, with no recycle step. The only action in EigenFrame that changes your files. Contrast [reject](#reject--un-reject).
 
+## Distortion correction
+
+A warp field a fit carries alongside its rotation, scale and translation, describing the part of the field a plain transform cannot express. A **rig correction** is fitted once for the whole rig from every frame of a target; a per-frame correction is fitted for one frame from its own stars. A correction is applied only if it passes a check on how far it moves pixels, whether it folds the image, and whether it improves the corners. See [judging a fit yourself](../stack/alignment-viewer.md#distortion-correction).
+
 ## Epoch
 
 The stretch over which one flat still corrects your lights. It ends whenever the optical response changes, whether you did it on purpose (collimating, cleaning, re-spacing) or found it later (a dust mote arriving, moving, or clearing, a shift in vignetting or illumination). A flat from before a boundary never calibrates a light from after it. See [how long is a flat good for](../calibration/flat-epochs.md).

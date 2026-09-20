@@ -47,7 +47,7 @@ Under the verdict, a frame whose stars sit tight in the middle and a couple of p
 
 This is advisory and nothing else. The frame is aligned, it stays aligned, it stays in the stack, and the verdict above it is unchanged. It is there because a plain rotation, scale and translation cannot express a field that is stretched more along one axis than the other, which is what refraction low in the sky and optics turned by a meridian flip both produce.
 
-Under the line, the viewer names the way through it: turn on distortion correction in this filter's alignment settings and run Evaluate again. The frames it helps leave the drift group, and the **drift** hops walk whatever is left. [When frames will not align](./when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift) covers the whole of it.
+Under the line, the viewer names the way through it: choose **Rig** under Distortion correction in the panel on the right, then **Apply to set**. The frames it helps leave the drift group, and the **drift** hops walk whatever is left. [When frames will not align](./when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift) covers the whole of it.
 
 ## Reading the badge
 
@@ -80,19 +80,37 @@ The controls panel carries the same matching parameters Evaluate alignment uses:
 
 A banner above the sliders reports the honest outcome of that live fit as you tune: whether it landed, how many stars matched and how many of those the fit trusted, and how tightly they agree. If the tuned fit fails or reads as an out-of-range framing, the banner says so plainly and reminds you that the canvas is still showing the raw or rough fallback, not the fit you just produced.
 
-Distortion correction options sit below the matching settings: a kernel choice, a support factor, and a regularization amount. A fit made with one of these carries a warp field alongside its rotation, scale and translation, and that warp is what straightens a field the plain fit cannot express.
+**Save for this filter** stores the current slider values against the filter; frames don't re-fit until you also **Apply to set**, which saves and then re-evaluates every frame in the filter with those settings, or until you next run [Evaluate alignment](./evaluate-alignment.md).
 
-While you are still tuning, the fit is not saved anywhere, so the canvas draws its plain part only and says so:
+## Distortion correction
+
+Below the matching settings, **Distortion correction** sets how much more than a rotation, scale and translation a fit may carry. A correction is a warp field alongside the plain transform, and it is what straightens a field the plain fit cannot express. Three choices:
+
+**None** keeps every fit to the plain transform.
+
+**Rig** fits one correction for the whole rig, from every frame of this target at once. It works best when the set includes frames from both sides of the meridian, since the two sides show the same pattern from opposite directions and together pin it down. **Apply to set** saves the choice, re-fits the filter, and fits that rig correction from the result.
+
+**Per-frame (advanced)** fits a separate correction for each frame from that frame's own matched stars, and reveals the kernel choice, support factor and regularization amount. The support factor is how far each control point's influence reaches, and higher is smoother. Regularization pulls the warp back toward the plain fit on a 0 to 1 scale relative to the kernel's own reach; 0.1 is a sensible starting point, and higher is gentler.
+
+A line under the chooser reports the correction on the frame in front of you: where it came from, its **max shift**, the furthest any pixel moves from where the plain fit alone would put it, and its **corner error**, what the stars near the edges still miss by once it is applied.
+
+### When a correction is refused
+
+A correction is applied only if it passes a check first. One that would move pixels too far, fold the image over itself, or leave the corners no better than the plain fit is refused, and those frames stay on their plain fit. The line under the chooser says which of the three it was, and the frame carries a **correction not applied** badge in the top right of the canvas with the same reason in its tooltip.
+
+After **Apply to set** with **Rig** chosen, a line below the button reports how many frames the correction was fitted from along with its max shift and corner error, or says it was refused and why.
+
+### Accepting a per-frame correction
+
+While you are still tuning a per-frame correction it is not saved anywhere, so the canvas draws the plain part of the fit only and says so:
 
 `Distortion correction not shown until this fit is accepted`
 
 **Accept this fit** to save it. From then on the viewer draws that frame already warped into the reference's own canvas, corners included, and every stack built on it applies the same warp to the pixels it combines. The residual field block in the diagnostics panel is how you judge whether the correction is worth having before you accept.
 
-**Save for this filter** stores the current slider values against the filter; frames don't re-fit until you also **Apply to set**, which saves and then re-evaluates every frame in the filter with those settings, or until you next run [Evaluate alignment](./evaluate-alignment.md).
-
 ## The diagnostics panel
 
-Below the controls sits a diagnostics panel: deliberately technical, deliberately dense, and meant to be copied rather than read as prose. It names the frame and reference by id, states the verdict, lists the matching parameters in effect, and gives the fitted transform as scale, rotation and translation. Underneath that it reports the match statistics behind the fit, matched star pairs, inlier ratio, residual RMS, and, for a fit flagged as out of range, exactly which axis failed the rig's expected transform and by how much. When distortion correction is active it adds the distortion residuals too.
+Below the controls sits a diagnostics panel: deliberately technical, deliberately dense, and meant to be copied rather than read as prose. It names the frame and reference by id, states the verdict, lists the matching parameters in effect, and gives the fitted transform as scale, rotation and translation. Underneath that it reports the match statistics behind the fit, matched star pairs, inlier ratio, residual RMS, and, for a fit flagged as out of range, exactly which axis failed the rig's expected transform and by how much. It also names the distortion correction in effect and, where a frame carries one, its source, max shift and corner error.
 
 A **residual field** block says where in the frame the error sits, and how much of it a linear model accounts for:
 

@@ -69,7 +69,11 @@ For the full decision tree, see [when frames will not align](../stack/when-frame
 
 ## My stack is sharp in the middle and soft in the corners
 
-The fits read Aligned and the corners still drift a pixel or two. That is the field itself rather than a bad match: refraction compresses a field shot low in the sky, and a meridian flip turns the corner pattern of the optics with the camera. Press **G** in the Alignment Viewer for the corners grid to see it, turn on distortion correction in the filter's alignment settings and run **Evaluate alignment** again so the frames it helps drop out of the group, and where the drift follows a flip, stack one side of the meridian at a time from the **Mount side** selector in the integrate panel. See [the center is sharp but the corners drift](../stack/when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift).
+The fits read Aligned and the corners still drift a pixel or two. That is the field itself rather than a bad match: refraction compresses a field shot low in the sky, and a meridian flip turns the corner pattern of the optics with the camera. Press **G** in the Alignment Viewer for the corners grid to see it, choose **Rig** under **Distortion correction** and press **Apply to set** so the frames it helps drop out of the group, and where the drift follows a flip, stack one side of the meridian at a time from the **Mount side** selector in the integrate panel. See [the center is sharp but the corners drift](../stack/when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift).
+
+## A stack swirls or has dark holes near the corners
+
+A stacked master whose corners swirl, smear into arcs, or carry empty holes was built from a distortion correction that does not describe the field. Run **Evaluate alignment** for that filter and stack it again. A correction is applied only when it passes a check first: it may not fold the image, move pixels further than the cap, or leave the corners no better than the plain fit. A correction that fails any of the three is refused, and those frames stack on their plain fit. See [distortion correction](../stack/alignment-viewer.md#distortion-correction).
 
 ## A stack failed or was cancelled
 

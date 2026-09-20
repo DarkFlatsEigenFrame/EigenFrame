@@ -17,6 +17,8 @@ With that gate cleared, press **▶ Integrate aligned frames, open stacking lab*
 
 Normalization, rejection method and its sigma parameters, output pedestal, quality weighting (importance, floor, best-N, localized normalization) and pixel repair all live here. [Rejection and normalization](./rejection-and-normalization.md) covers what each of these settings does.
 
+A stack warps each frame by whatever [distortion correction](./alignment-viewer.md#distortion-correction) that frame carries, and stacks a frame with none on its plain fit.
+
 ## The stacking lab
 
 The lab stacks one 512 pixel output tile synchronously, so a change to rejection, normalization or weighting repaints the tile within seconds. Use it to see the rejection map, compare two settings against each other, and read the projected relative SNR and per-frame combine weight before you spend the time on a full stack. The lab reads the same settings column the full stack submits, so what you dial in is what you get.
