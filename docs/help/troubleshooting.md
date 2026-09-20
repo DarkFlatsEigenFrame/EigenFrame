@@ -69,7 +69,7 @@ For the full decision tree, see [when frames will not align](../stack/when-frame
 
 ## My stack is sharp in the middle and soft in the corners
 
-The fits read Aligned and the corners still drift a pixel or two. That is the field itself rather than a bad match: refraction compresses a field shot low in the sky, and a meridian flip turns the corner pattern of the optics with the camera. Press **G** in the Alignment Viewer for the corners grid to see it, turn on distortion correction in the tuning panel and accept the refitted frames, and where the drift follows a flip, stack one side of the meridian at a time from the **Mount side** selector in the integrate panel. See [the center is sharp but the corners drift](../stack/when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift).
+The fits read Aligned and the corners still drift a pixel or two. That is the field itself rather than a bad match: refraction compresses a field shot low in the sky, and a meridian flip turns the corner pattern of the optics with the camera. Press **G** in the Alignment Viewer for the corners grid to see it, turn on distortion correction in the filter's alignment settings and run **Evaluate alignment** again so the frames it helps drop out of the group, and where the drift follows a flip, stack one side of the meridian at a time from the **Mount side** selector in the integrate panel. See [the center is sharp but the corners drift](../stack/when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift).
 
 ## A stack failed or was cancelled
 

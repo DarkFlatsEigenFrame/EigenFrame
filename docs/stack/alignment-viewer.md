@@ -15,7 +15,11 @@ Open it from the **Needs attention** panel's **Review N**, or by clicking into a
 
 Hold **Space**, or hold the **A/B reference** button, to flip the canvas to the reference frame; release either to flip back. This is the fastest way to see whether two star fields actually line up, since the eye catches a mismatch in a flip far faster than in a static side-by-side.
 
-The bottom filmstrip and the scrubber above it move you between frames. The left/right arrow keys do the same. Reject rings on the filmstrip thumbnails carry over from the rest of the app.
+The bottom filmstrip and the scrubber above it move you between frames. The left/right arrow keys do the same. Reject rings on the filmstrip thumbnails carry over from the rest of the app, and an amber ring marks every frame whose corners drift.
+
+**▶ flip through**, or **P**, walks the filter on its own at about four frames a second, skipping rejected frames and stopping at the last one. The button reads **❚❚ stop** while it runs, and any input stops it: another key, the wheel, the scrubber, a click. A frame that jumps, trails or drifts announces itself at that rate far more readily than one at a time.
+
+**‹ drift** and **drift ›**, either side of the scrubber, or **[** and **]**, hop straight to the previous or next frame whose corners drift, skipping rejected frames and the reference. They grey out when there is nothing further to hop to, so a filter with no drift in it leaves both inert.
 
 ## Seeing where the fit agrees
 
@@ -29,6 +33,8 @@ Press **G**, or the **corners** toolbar button, to swap the single canvas for a 
 
 The nine cells are fixed windows onto the reference canvas, so pan and zoom are off while the grid is on, and a label on the canvas says so. Leaving the grid returns you to the framing you had.
 
+Every cell draws at full resolution as soon as that frame is prepared, so stepping or flipping through a filter in the grid moves as quickly as the filmstrip does. Opening the grid starts preparing the whole filter, working outward from the frame you are on, so the frames you have not reached yet are ready by the time you get to them. A frame that is still preparing shows the grid at low resolution in the same framing, and sharpens in place.
+
 Everything else keeps working: hold **Space** to flip all nine cells to the reference at once, scrub or arrow through frames, press **R** to reject, and **Accept this fit** and **Reset** act on the frame on screen as they always do. The matched-pair overlay draws per cell.
 
 > **Screenshot:** The corners grid on a frame whose center is tight and whose corners are offset.
@@ -39,7 +45,9 @@ Under the verdict, a frame whose stars sit tight in the middle and a couple of p
 
 `corners drift ~2.4 px`
 
-This is advisory and nothing else. The frame is aligned, it stays aligned, it stays in the stack, and the verdict above it is unchanged. It is there because a plain rotation, scale and translation cannot express a field that is stretched more along one axis than the other, which is what refraction low in the sky and optics turned by a meridian flip both produce. [When frames will not align](./when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift) covers what to do about it.
+This is advisory and nothing else. The frame is aligned, it stays aligned, it stays in the stack, and the verdict above it is unchanged. It is there because a plain rotation, scale and translation cannot express a field that is stretched more along one axis than the other, which is what refraction low in the sky and optics turned by a meridian flip both produce.
+
+Under the line, the viewer names the way through it: turn on distortion correction in this filter's alignment settings and run Evaluate again. The frames it helps leave the drift group, and the **drift** hops walk whatever is left. [When frames will not align](./when-frames-will-not-align.md#the-center-is-sharp-but-the-corners-drift) covers the whole of it.
 
 ## Reading the badge
 

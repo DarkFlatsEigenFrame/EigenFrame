@@ -40,10 +40,13 @@ Suppressed while a text field has focus.
 | **Space** (hold) | Flip to the reference frame; release to flip back |
 | **M** | Toggle the matched-pair vector overlay |
 | **G** | Toggle the corners grid |
+| **]** | Jump to the next frame whose corners drift |
+| **[** | Jump back to the previous frame whose corners drift |
+| **P** | Start or stop flipping through the frames |
 | **R** | Reject or restore the frame on screen |
 | **Escape** | Close the viewer |
 
-Pan and zoom are off while the corners grid is on. See [the Alignment Viewer](../stack/alignment-viewer.md).
+Pan and zoom are off while the corners grid is on. The drift hops skip rejected frames and the reference, and do nothing when there is no further drifting frame in that direction. Flipping through runs at about four frames a second and stops on any other input. See [the Alignment Viewer](../stack/alignment-viewer.md).
 
 ## Stacking lab
 

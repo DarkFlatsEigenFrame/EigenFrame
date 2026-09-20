@@ -41,7 +41,7 @@ A full-screen overlay for one frame: canvas on the left, a collapsible panel of 
 
 ## The Alignment Viewer
 
-The frame-by-frame fit review for one target and filter: flip between a frame and the alignment reference, read the fit numbers, and accept, reject, or reset a frame's alignment. **G** swaps the canvas for a grid of nine fixed cells, the corners, the edge midpoints and the center at 1:1, for judging a field that holds in the middle and drifts at the edges. Opens from the Needs attention panel's Review action, or by clicking into any frame from a filter's contact sheet. See [evaluate alignment](../stack/evaluate-alignment.md) and [judging a fit yourself](../stack/alignment-viewer.md).
+The frame-by-frame fit review for one target and filter: flip between a frame and the alignment reference, read the fit numbers, and accept, reject, or reset a frame's alignment. **G** swaps the canvas for a grid of nine fixed cells, the corners, the edge midpoints and the center at 1:1, for judging a field that holds in the middle and drifts at the edges. **P** flips through the filter on its own, and **[** and **]** hop between the frames whose corners drift. Opens from the Needs attention panel's Review action, or by clicking into any frame from a filter's contact sheet. See [evaluate alignment](../stack/evaluate-alignment.md) and [judging a fit yourself](../stack/alignment-viewer.md).
 
 ## The integrate panel and stacking lab
 

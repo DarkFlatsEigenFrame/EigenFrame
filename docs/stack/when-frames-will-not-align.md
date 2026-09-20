@@ -46,7 +46,7 @@ Re-running the same evaluation on these produces the same answer. Judge the fram
 
 ## The center is sharp but the corners drift
 
-The fits all read Aligned, the middle of the field is tight, and the stars at the edges sit one to a few pixels off. Stacked, that shows up as soft or doubled corners over a sharp core. The [Alignment Viewer](./alignment-viewer.md) marks these frames with a `corners drift ~N px` line and groups them on the target page as **Aligned, corners drift**; press **G** in the viewer for the corners grid to see it directly.
+The fits all read Aligned, the middle of the field is tight, and the stars at the edges sit one to a few pixels off. Stacked, that shows up as soft or doubled corners over a sharp core. The [Alignment Viewer](./alignment-viewer.md) marks these frames with a `corners drift ~N px` line and groups them on the target page as **Aligned, corners drift**; press **G** in the viewer for the corners grid to see it directly, and **[** and **]** to hop between the frames it applies to.
 
 Nothing here is a bad match. A rotation, a scale and a translation describe the whole field with one number for size, so a field that is stretched more along one direction than another has no way to fit everywhere at once. Two ordinary causes produce exactly that:
 
@@ -55,7 +55,7 @@ Nothing here is a bad match. A rotation, a scale and a translation describe the 
 
 Two things are worth doing, and they combine:
 
-**Turn on distortion correction.** In the viewer's tuning panel, pick a distortion kernel and re-fit the frame. The diagnostics panel's residual field block tells you whether it helped: compare `outer third` against `post-rbf`, and a clear drop means the warp is describing something real. **Accept this fit**, or save the settings and apply them to the set, and every stack built on those fits warps the pixels to match.
+**Turn on distortion correction for the whole filter.** In the viewer's tuning panel, pick a distortion kernel, then **Save for this filter** and run [Evaluate alignment](./evaluate-alignment.md) again, or **Apply to set**, which saves and re-fits the filter in one action. Each fit then carries a warp field alongside its rotation, scale and translation, every stack built on it warps the pixels to match, and the frames the warp helps leave the **Aligned, corners drift** group. What stays in the group is what the warp could not describe. For two or three frames rather than a filter, re-fit each one in the viewer and **Accept this fit** instead. Either way the diagnostics panel's residual field block says whether it helped: compare `outer third` against `post-rbf`, and a clear drop means the warp is describing something real.
 
 **Stack one side of the meridian at a time.** Where the drift follows the flip, the **Mount side** selector in the integrate panel stacks East or West alone. See [how do I stack](./integrate-aligned-frames.md#stacking-one-side-of-the-meridian). Two masters, one per side, keep two different corner patterns from being averaged into one.
 
