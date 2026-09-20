@@ -41,7 +41,7 @@ Flagging is advisory. It marks frames for your attention and leaves every decisi
 
 Quality thresholds live on the Equipment page, per rig: **Max FWHM**, **Max HFR**, **Min stars**, **Max ecc**, **Max directionality**, and **Max elongated**. The first four are blank by default, since a good FWHM or star count depends on the rig, so they flag nothing until you fill one in. Max directionality and Max elongated start at 0.10 and 0.40 on every rig, because trailing looks the same on any optics; clear either field to turn it off. Any frame whose stored metric falls the wrong side of a threshold is flagged, and you see it three ways: an amber ring and a badge on the frame's tile, an **N flagged** count on the group header, and a **Reject flagged (N)** action on the group. Hover the badge to read which thresholds the frame failed, with its value and the rig's limit; a trail glyph marks frames the trail thresholds caught. The same values turn amber in the tile's **i** details. That action is a one-click way to reject exactly those frames, described in [culling frames](./culling-frames.md).
 
-A frame is flagged only once stars have been detected on it, since the thresholds are compared against its measured metrics.
+A frame is flagged only once stars have been detected on it, since the thresholds are compared against its measured metrics. Rejecting a flagged frame takes it out of the count, because its tile carries the REJECTED overlay in place of the flag marker. Restore it and the flag comes straight back.
 
 > **Screenshot:** Equipment page, the quality thresholds for a rig with Max FWHM and Min stars filled in.
 
