@@ -40,7 +40,7 @@ For a larger clear-out across a whole target and filter, spanning every session,
 
 ## Cull by metric
 
-Flipping through frames by eye is a good first pass, but the borderline cases benefit from a number. **Cull by metric** takes every frame in a filter and sorts it by one measurement at a time: FWHM, HFR, eccentricity, star count, SNR, median background level, background MAD, a composite Quality score, and, once enough frames have aligned, Transparency.
+Flipping through frames by eye is a good first pass, but the borderline cases benefit from a number. **Cull by metric** takes every frame in a filter and sorts it by one measurement at a time: FWHM, HFR, eccentricity, directionality, elongated fraction, star count, SNR, median background level, background MAD, a composite Quality score, and, once enough frames have aligned, Transparency.
 
 Each metric gets its own tab. Within a tab, frames are ordered low to high, and you set two boundaries, a low cut and a high cut, each shown as a count with a step control and the value it would keep at (for example "keep ≥ 2.10 px"). A histogram above the frames shows the whole distribution with both cut tails tinted. Dragging a divider through the frame grid moves the boundary directly; every tab's cuts combine, so a frame cut on any metric is included in what you're about to reject.
 
@@ -54,7 +54,7 @@ Each frame in Cull by metric also carries its own reject toggle and, once reject
 
 ## Reject flagged
 
-When a rig has quality thresholds set, frames that fall outside them are marked with an amber flag and counted on the group header as **N flagged**. The header then offers **Reject flagged (N)**, which rejects exactly those frames in one click.
+When a rig has quality thresholds set, frames that fall outside them are marked with an amber ring and a badge whose hover text names the thresholds they failed, and counted on the group header as **N flagged**. The header then offers **Reject flagged (N)**, which rejects exactly those frames in one click.
 
 The flag is a suggestion and the click is yours: flagging on its own leaves a frame in every stack it was already part of. Loosening a threshold clears the flags immediately, and frames you rejected while it was tighter stay rejected until you un-reject them. See [star detection and frame quality](./star-detection-and-frame-quality.md) for where the thresholds live and how they differ from the acceptance settings.
 
@@ -62,7 +62,7 @@ The flag is a suggestion and the click is yours: flagging on its own leaves a fr
 
 ## Per-frame rejection: contact sheet and viewer
 
-On a session's contact sheet, every thumbnail carries a reject control in its corner. Click it to reject or restore that one frame in place; the thumbnail immediately shows the REJECTED overlay. Every tile also carries a small **i** control at the left end of its bottom edge. Click it for the frame's details: capture time (local when the frame's header records one, otherwise labeled UTC), pier side, focuser temp, airmass, rotator, and, for a light, its median HFR, eccentricity, and SNR. A value the frame doesn't carry is simply left out. The group header above the sheet offers **Reject all**, **Reject flagged (N)** where flagged frames exist, and, once something is rejected, **Restore all** and **Delete rejected** for the whole group (or, when a flat group splits into evening and morning batches, for each batch separately).
+On a session's contact sheet, every thumbnail carries a reject control in its corner. Click it to reject or restore that one frame in place; the thumbnail immediately shows the REJECTED overlay. Every tile also carries a small **i** control at the left end of its bottom edge. Click it for the frame's details: capture time (local when the frame's header records one, otherwise labeled UTC), pier side, focuser temp, airmass, rotator, and, for a light, its median HFR, eccentricity, directionality, elongated fraction, and SNR, with any value outside the rig's quality thresholds shown in amber. A value the frame doesn't carry is simply left out. The group header above the sheet offers **Reject all**, **Reject flagged (N)** where flagged frames exist, and, once something is rejected, **Restore all** and **Delete rejected** for the whole group (or, when a flat group splits into evening and morning batches, for each batch separately).
 
 In the viewer, the same action lives in the Interaction panel as a **Reject frame** / **Unreject** button. A **Hide rejected** checkbox in the same panel controls whether rejected frames are skipped entirely: with it on, stepping through the filmstrip with the arrow keys or the prev/next controls jumps straight past any rejected frame, landing on the next one that's still passing.
 
