@@ -90,6 +90,8 @@ Below the matching settings, **Distortion correction** sets how much more than a
 
 **Rig** fits one correction for the whole rig, from every frame of this target at once. It works best when the set includes frames from both sides of the meridian, since the two sides show the same pattern from opposite directions and together pin it down. **Apply to set** saves the choice, re-fits the filter, and fits that rig correction from the result.
 
+The rig correction is fitted from every star EigenFrame can pair between a frame and the reference, thousands per frame, not only the handful the match itself is built from. That is what gives it stars out at the edges, where the drift is. **max stars (triangles)** governs the match and nothing else, so leave it at its default.
+
 **Per-frame (advanced)** fits a separate correction for each frame from that frame's own matched stars, and reveals the kernel choice, support factor and regularization amount. The support factor is how far each control point's influence reaches, and higher is smoother. Regularization pulls the warp back toward the plain fit on a 0 to 1 scale relative to the kernel's own reach; 0.1 is a sensible starting point, and higher is gentler.
 
 A line under the chooser reports the correction on the frame in front of you: where it came from, its **max shift**, the furthest any pixel moves from where the plain fit alone would put it, and its **corner error**, what the stars near the edges still miss by once it is applied.
@@ -110,7 +112,16 @@ While you are still tuning a per-frame correction it is not saved anywhere, so t
 
 ## The diagnostics panel
 
-Below the controls sits a diagnostics panel: deliberately technical, deliberately dense, and meant to be copied rather than read as prose. It names the frame and reference by id, states the verdict, lists the matching parameters in effect, and gives the fitted transform as scale, rotation and translation. Underneath that it reports the match statistics behind the fit, matched star pairs, inlier ratio, residual RMS, and, for a fit flagged as out of range, exactly which axis failed the rig's expected transform and by how much. It also names the distortion correction in effect and, where a frame carries one, its source, max shift and corner error.
+Below the controls sits a diagnostics panel: deliberately technical, deliberately dense, and meant to be copied rather than read as prose. It names the frame and reference by id, states the verdict, lists the matching parameters in effect, and gives the fitted transform as scale, rotation and translation. Underneath that it reports the match statistics behind the fit, matched star pairs, inlier ratio, residual RMS, and, for a fit flagged as out of range, exactly which axis failed the rig's expected transform and by how much. A `harvested pairs` line closes that block with the count of star pairs found across the whole field, typically thousands where the match itself reports tens; it is the set every residual figure below is measured over, and the set a rig correction is fitted from.
+
+It also names the distortion correction in effect and, where a frame carries one, its source, max shift and corner error. Under those, where a rig correction applies to the frame, two more lines report what the frame reads once that correction is in play:
+
+```
+  after rig  overall 1.090 px
+  after rig  outer   1.150 px
+```
+
+`overall` is the residual across every harvested pair, `outer` across the outer field alone. Read the second against `outer third` in the residual field block below: the pair is the before and after of the correction at the edges, and a drop of two or three times is what a rig correction that is working looks like.
 
 A **residual field** block says where in the frame the error sits, and how much of it a linear model accounts for:
 
