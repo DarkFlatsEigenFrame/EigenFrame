@@ -89,6 +89,8 @@ The **Send diagnostics** toggle and its connection string live at the bottom of 
 | Send diagnostics | Whether operational events leave your machine at all | Off |
 | Connection String | Where diagnostics are sent when the toggle is on | Blank (sends to the EigenFrame team's endpoint) |
 
+Below them, **Local API key** shows the key a script or tool on this computer sends to reach EigenFrame's local API, with a Copy button. A new key is made each time EigenFrame starts, so a tool needs the current one.
+
 ## Related
 
 - [Performance and cache](./performance-and-cache.md)
