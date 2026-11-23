@@ -64,6 +64,16 @@ From **Performance Settings** in the gear menu. Full guidance, including how to 
 | Drive Eviction Target | 8 GB |
 | Stalled-read timeout | 5 seconds |
 | Cache Location | Empty (uses `%APPDATA%/EigenFrame/tiles-cache`) |
+| Prepared data location | EigenFrame's own folder (changed with **Move**) |
+| Pause background preparation below | 10 GB |
+
+## Background preparation
+
+In **Performance Settings**, above Diagnostics. See [performance and cache](./performance-and-cache.md#have-last-nights-frames-ready-when-you-sit-down).
+
+| Setting | Controls | Default |
+|---|---|---|
+| Prepare new frames in the background | Whether frames arriving while EigenFrame is open get their thumbnails, statistics and star detection right away | Off |
 
 ## Stack output templates
 

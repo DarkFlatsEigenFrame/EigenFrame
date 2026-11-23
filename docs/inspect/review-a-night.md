@@ -62,3 +62,4 @@ Three ways to move without leaving the page: the newer and older night buttons b
 - [Star detection and frame quality](./star-detection-and-frame-quality.md)
 - [Troubleshooting](../help/troubleshooting.md)
 - [Your first hour with EigenFrame](../start/first-hour.md)
+- [Have last night's frames ready when you sit down](../reference/performance-and-cache.md#have-last-nights-frames-ready-when-you-sit-down)

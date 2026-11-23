@@ -30,6 +30,7 @@ Turning the toggle off stops new events immediately. Anything already queued may
 - **Alignment runs.** The object name, the filter, the outcome, the algorithm, counts of fitted and failed frames, and timings.
 - **Stacks.** The object name, the filter, the rejection and normalization settings, per-phase timings, and value-distribution figures for the result.
 - **Cache eviction.** What triggered it, how much was freed, and the cache fill level.
+- **Background preparation.** For each batch of new frames, how many were prepared, skipped or failed, how long it took and how much it wrote; when preparation pauses or resumes for disk space, the free space and the limit; and, on the first stretch of image requests after two hours without any, how many images were ready and how many still had to be prepared.
 - **Update events.** Which update phase was reached, the version moved from and to, and a reason on failure.
 
 The connection also carries what any Application Insights client attaches on its own: a session identifier, the SDK version, and your IP address, from which the service derives an approximate location.

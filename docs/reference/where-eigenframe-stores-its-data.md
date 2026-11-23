@@ -42,13 +42,15 @@ This is computed from your frames. Delete it and EigenFrame recomputes it on the
 - [Rough alignment](./glossary.md#rough-alignment) results
 - The [tile cache](./performance-and-cache.md)
 
-The tile cache can be relocated to a folder of its own outside `EigenFrame`, so backing up the `EigenFrame` folder doesn't necessarily capture it. That's fine: it doesn't need capturing.
+Thumbnails, star catalogs and flat analysis are kept in the `EigenFrame` folder unless you move them to a folder of your own with [Prepared data location](./performance-and-cache.md#prepared-data-on-a-nearly-full-system-drive). With [background preparation](./performance-and-cache.md#have-last-nights-frames-ready-when-you-sit-down) on, they are written for every frame that arrives, about 1.3 MB per light and 0.5 MB per flat, and preparation pauses before the drive holding them runs low.
+
+The tile cache and the prepared data can each live in a folder of their own outside `EigenFrame`, so backing up the `EigenFrame` folder doesn't necessarily capture them. That's fine: neither needs capturing.
 
 > **Screenshot:** The `EigenFrame` application-data folder open in a file browser.
 
 ## Starting over
 
-Quit EigenFrame, delete the `EigenFrame` folder, then start it again. Your frames, masters, and stacks are untouched.
+Quit EigenFrame, delete the `EigenFrame` folder, then start it again. Your frames, masters, and stacks are untouched. If you moved the prepared data or the tile cache to a folder of your own, delete that folder too to reclaim its space.
 
 You lose everything in the first list above: your library folder list, so you'll re-add and re-scan your folders; your calibration assignments, rig settings and logbook, alignment references, fits and tuning, presets, rejections, and remembered view preferences. Everything in the second list rebuilds on its own once your folders are scanned again.
 

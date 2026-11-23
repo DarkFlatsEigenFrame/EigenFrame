@@ -13,7 +13,7 @@ A [fit](#fit) you confirmed by eye in the Alignment Viewer. An accepted fit is l
 
 ## Activity tray
 
-The running list of background work: scans, re-index passes, star detection, alignment runs, stacks, and update downloads. Open it to watch progress or cancel a job after navigating away from the page that started it.
+The running list of background work: scans, re-index passes, star detection, background preparation of new frames, alignment runs, stacks, and update downloads. Open it to watch progress or cancel a job after navigating away from the page that started it.
 
 ## Aligned
 

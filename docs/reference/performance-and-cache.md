@@ -7,7 +7,7 @@ description: "Performance Settings: every knob, its default, and how to tune for
 
 # It's slow, it's using all my RAM, or my cache drive is full
 
-Open **Performance Settings** from the gear menu. Every setting there applies immediately with no restart, with three exceptions: the **Stacking Tile Cache** applies on next launch, **Scan Concurrency** applies to the next scan, and **Cache Location** goes through a guided relocation instead of saving directly.
+Open **Performance Settings** from the gear menu. Every setting there applies immediately with no restart, with four exceptions: the **Stacking Tile Cache** applies on next launch, **Scan Concurrency** applies to the next scan, **Cache Location** goes through a guided relocation instead of saving directly, and **Prepared data location** changes only through its **Move** button.
 
 > **Screenshot:** Performance Settings, top of the page, showing the concurrency fields.
 
@@ -31,10 +31,32 @@ Open **Performance Settings** from the gear menu. Every setting there applies im
 | Drive Eviction Target | How much to reclaim in one pass once the free-space reserve is breached | 8 GB | none |
 | Stalled-read timeout | How long a stalled read is held before it's dropped | 5 seconds | none |
 | Cache Location | Folder path for the tile cache | Empty (uses `%APPDATA%/EigenFrame/tiles-cache`) | none |
+| Prepared data location | Folder holding thumbnails, star catalogs and flat analysis | EigenFrame's own folder | none |
+| Pause background preparation below | Free space on the drive holding prepared data below which background preparation pauses | 10 GB | none |
 
 Only the four settings with an entry in the Env override column can actually be pinned by an environment variable. When one is set, its field on the screen is disabled and shows which variable is holding it.
 
 The screen warns you if Read Concurrency and Compute Concurrency are both 2 or below: performance is significantly reduced at that level.
+
+## Have last night's frames ready when you sit down
+
+**Prepare new frames in the background**, under **Background preparation** in Performance Settings, is off by default. Turn it on and leave EigenFrame open while you image. Each frame that arrives in a library folder gets its thumbnail, statistics and star detection as soon as EigenFrame sees it, and each flat gets its surface analysis. When you open the night, its thumbnails paint at once, star counts and FWHM are already on the filter tab, and the flats page reads its verdicts without analyzing the frames again. Turning the setting on also prepares any master that has no thumbnail yet.
+
+This work runs at the lowest priority: anything you open, and any stack you run, goes first. While frames are being prepared, the Activity tray shows a **Preparing new frames** row, which disappears when the work is done.
+
+Prepared data takes roughly 1.3 MB per light and 0.5 MB per flat. It lives in EigenFrame's own folder on your system drive unless you move it (see below). Under the setting, the screen shows how much prepared data there is, the drive and folder it is on, and how much space is free on that drive. Preparation pauses when free space falls below **Pause background preparation below**, 10 GB by default, and resumes once 2 GB more is free. While it is paused the tray row reads **paused, low disk space**, and anything you open yourself is still prepared.
+
+> **Screenshot:** Performance Settings, the Background preparation section with the toggle on and the prepared-data line.
+
+## Prepared data on a nearly full system drive
+
+Thumbnails, star catalogs and flat analysis are kept, not cached: they are never evicted, and rebuilding them means reading every frame again. If they belong on a roomier drive, type a folder into **Prepared data location** and press **Move**. EigenFrame copies the prepared data to the new folder, then removes the old copy; the library database and your settings stay where they are. A progress bar shows the copy, and **Cancel move** leaves everything where it was. EigenFrame keeps working during the copy, and thumbnails pause for a moment at the end while it switches over.
+
+The move is refused if the folder already holds prepared data or its drive lacks room for the copy. If EigenFrame closes during a move, the next start either finishes it or undoes it, so the prepared data is always in one place. Leave the field blank and press **Move** to bring the prepared data back to EigenFrame's own folder.
+
+If the drive holding the prepared data is missing when EigenFrame starts, EigenFrame uses its own folder for that session and goes back to the chosen folder once the drive is there at the next start.
+
+> **Screenshot:** The Move prepared data dialog, mid-copy.
 
 ## A library on a spinning disk or a network share
 

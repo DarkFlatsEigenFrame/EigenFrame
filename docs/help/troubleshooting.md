@@ -44,6 +44,12 @@ A session is one night for one rig. EigenFrame assigns the session date by takin
 
 Linear data renders black until it is stretched. Adjust the black clip and stretch factor in the viewer, and save the result to the rig so every frame on it opens the same way. The stretch is a display transform only, so it changes what you see and never the stored pixel values. If a frame is still black after the data has loaded and the stretch has settled, check that it isn't genuinely blank.
 
+## A thumbnail says "Can't read this file"
+
+EigenFrame tried to read the frame and the file is damaged: it is shorter than its header says, or its image data fails its checksum or does not decompress. Hover the tile to read the exact reason. EigenFrame stops trying to build that frame, leaves it out of background preparation, and a stack that includes it stops and names the frame.
+
+Press **Reject** on the tile to set the frame aside. If you replace the file with a good copy, EigenFrame picks the new file up on its own. If you repaired the file in place, use **Reindex** on its row on the Artifacts page to read it again.
+
 ## A flat is not being applied
 
 The calibration assignment step looks for a flat master matching the light's filter, rig, and epoch, and reports why one couldn't be found. Common reasons:

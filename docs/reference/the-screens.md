@@ -49,7 +49,7 @@ A large panel over a target's filter tab, opened with **Integrate aligned frames
 
 ## The Activity tray
 
-A running list of background work, opened from an icon in the header on every screen: scans, re-index passes, star detection, alignment runs, stacks, and update downloads. Open it to watch progress or cancel a job after navigating away from the page that started it. A failed job carries its error on one truncated line; select that line to expand the full text in place, and select it again to collapse it.
+A running list of background work, opened from an icon in the header on every screen: scans, re-index passes, star detection, background preparation of new frames, alignment runs, stacks, and update downloads. Open it to watch progress or cancel a job after navigating away from the page that started it. A failed job carries its error on one truncated line; select that line to expand the full text in place, and select it again to collapse it.
 
 ## Manage Library
 
@@ -61,7 +61,7 @@ Reached from the gear menu. Set the filename templates EigenFrame uses when it s
 
 ## Performance Settings
 
-Reached from the gear menu. Tune read, compute, and scan concurrency, the in-flight memory budget, the tile cache size and location, and cache migration between drives. See [performance and cache](./performance-and-cache.md).
+Reached from the gear menu. Tune read, compute, and scan concurrency, the in-flight memory budget, the tile cache size and location, and cache migration between drives, and turn on background preparation of new frames. See [performance and cache](./performance-and-cache.md).
 
 ## Diagnostics
 
