@@ -31,7 +31,7 @@ The grid lists each target shot that night as a row, with a column per filter. E
 
 Beneath the grid, a status block reports what happened when the assignments were checked. Opening the night triggers a fill pass that assigns any bias, dark, or flat that was still unassigned, which is why this block can change a second after the page loads: it starts by reporting how many frames it just assigned, then lists anything it could not resolve, with the reason and a link to fix it.
 
-Two actions sit next to the status: **Autodetect calibration** re-points only the frames whose assignment has gone bad (a rejected or missing master, or a flat on the wrong side of an optical-train change), and **Reset & reassign calibration** discards every assignment in scope, including ones you set by hand, and starts over. See [how EigenFrame decides which masters calibrate which lights](../calibration/how-calibration-is-assigned.md) for how an assignment is chosen and what each status line means.
+Two actions sit next to the status: **Return N broken choices to automatic**, shown when masters you chose have gone bad (rejected, deleted or unreadable, or a flat on the wrong side of an optical-train change), hands just those back to automatic assignment, and **Reset & reassign calibration** discards every assignment in scope, including ones you set by hand, and starts over. See [how EigenFrame decides which masters calibrate which lights](../calibration/how-calibration-is-assigned.md) for how an assignment is chosen and what each status line means.
 
 ## The Lights contact sheets
 

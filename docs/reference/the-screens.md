@@ -11,7 +11,7 @@ The nav bar runs Targets, Sessions, Artifacts, Stacks, and Equipment, in that or
 
 ## Targets
 
-The landing page of the library: one card per object per rig, sorted by when you last shot it. Each card totals its hours and shows a strip of thumbnails per filter. Click a card to open the target detail page, which adds an Overview tab and one tab per filter; a filter tab is where you inspect frames, evaluate alignment, and integrate a stack. See [targets](../library/targets.md), [review a project](../inspect/review-a-project.md), and [choose an alignment reference](../stack/choose-an-alignment-reference.md).
+The landing page of the library: one card per object per rig, sorted by when you last shot it. Each card totals its hours and shows a strip of thumbnails per filter. Click a card to open the target detail page, which adds an Overview tab and one tab per filter; a filter tab is where you inspect frames, evaluate alignment, and integrate a stack, and its calibration status line reports any lights that were reassigned a different flat, with **Restore previous**. See [targets](../library/targets.md), [review a project](../inspect/review-a-project.md), and [choose an alignment reference](../stack/choose-an-alignment-reference.md).
 
 ## Sessions
 
@@ -23,21 +23,21 @@ A single table of everything in the catalog: three tabs for Frames, Masters, and
 
 ## Stacks
 
-A list of every stacking run, with status, settings, and source frames for each. Filter by status or subtype to find a run you started earlier. See [find and manage your stacks](../stack/find-and-manage-your-stacks.md).
+A list of every stacking run, with status, settings, and source frames for each. A finished master whose lights have since been reassigned a different flat says how many. Filter by status or subtype to find a run you started earlier. See [find and manage your stacks](../stack/find-and-manage-your-stacks.md).
 
 ## Equipment
 
-One card per rig, discovered from your frame headers. From here you rename a rig, edit its grouping rule, jump to its most recent session, mark an optical-train change, or open its Flats page. See [rigs and equipment groups](../library/rigs-and-equipment-groups.md) and [how long is a flat good for](../calibration/flat-epochs.md).
+One card per rig, discovered from your frame headers. From here you rename a rig, edit its grouping rule and its settings, including whether its flats depend on rotator angle and its flat rotation tolerance, jump to its most recent session, mark an optical-train change, or open its Flats page. See [rigs and equipment groups](../library/rigs-and-equipment-groups.md) and [how long is a flat good for](../calibration/flat-epochs.md).
 
 > **Screenshot:** The library nav bar with the gear menu open.
 
 ## Flats
 
-One rig's flat history: a session timeline broken into epochs, with a dock per night and filter for reviewing frames, reading that batch's flat verdict, and building or managing a master. Flats has no nav-bar entry of its own; open it for one rig at a time from that rig's card on Equipment, or from the Flats this night section on a session page. See [how long is a flat good for](../calibration/flat-epochs.md) and [what the flat verdicts mean](../calibration/flat-quality-verdicts.md).
+One rig's flat history: a line stating whether its flats depend on rotator angle and what has been measured, with **Change** for both flat rotation settings, then a session timeline broken into epochs, with a dock per night and filter for reviewing frames, reading that batch's flat verdict, and building or managing a master. Flats has no nav-bar entry of its own; open it for one rig at a time from that rig's card on Equipment, or from the Flats this night section on a session page. See [how long is a flat good for](../calibration/flat-epochs.md) and [what the flat verdicts mean](../calibration/flat-quality-verdicts.md).
 
 ## The image viewer
 
-A full-screen overlay for one frame: canvas on the left, a collapsible panel of tabs on the right, a filmstrip along the bottom. Opens from a session contact sheet, from Cull by metric, from the Artifacts page, or from a target's filter tab; Escape closes it. See [how do I look at a frame properly](../inspect/image-viewer.md).
+A full-screen overlay for one frame: canvas on the left, a collapsible panel of tabs on the right, a filmstrip along the bottom. Its **Calibration** tab shows the frame's bias, dark and flat, each marked **Automatic** or **Chosen by you**, with a picker to override it and **Return to automatic** to undo an override. The flat picker lists flats in ranked order, with the reason the top one ranks first. Opens from a session contact sheet, from Cull by metric, from the Artifacts page, or from a target's filter tab; Escape closes it. See [how do I look at a frame properly](../inspect/image-viewer.md).
 
 ## The Alignment Viewer
 
@@ -45,7 +45,7 @@ The frame-by-frame fit review for one target and filter: flip between a frame an
 
 ## The integrate panel and stacking lab
 
-A large panel over a target's filter tab, opened with **Integrate aligned frames**: settings on the left, the single-tile stacking lab on the right, and a queue strip below. Tune rejection, normalization, quality weighting and pixel repair against the lab tile before committing the full stack. The lab holds its preview at one size, with its overlay, stretch, compare and tile controls banked underneath and the measurements below those. See [integrate aligned frames](../stack/integrate-aligned-frames.md), [rejection and normalization](../stack/rejection-and-normalization.md), and [stack presets](../stack/stack-presets.md).
+A large panel over a target's filter tab, opened with **Integrate aligned frames**: settings on the left, the single-tile stacking lab on the right, and a queue strip below. Tune rejection, normalization, quality weighting and pixel repair against the lab tile before committing the full stack. The lab holds its preview at one size, with its overlay, stretch, compare and tile controls banked underneath and the measurements below those. The **Ranking** tab beside Settings lists every contributing frame with its combine weight and its share of the stacked signal, under the **Projected relative SNR** gauge and a line stating how many frames have a Transparency value, with **Detect stars on N frames** when some frames need their stars detected again. Above the submit button, one line per flat names the flat master each group of lights will be calibrated with, and a banner lists any assignment that changed since the panel showed it. See [quality weighting](../stack/quality-weighting.md), [integrate aligned frames](../stack/integrate-aligned-frames.md), [rejection and normalization](../stack/rejection-and-normalization.md), and [stack presets](../stack/stack-presets.md).
 
 ## The Activity tray
 

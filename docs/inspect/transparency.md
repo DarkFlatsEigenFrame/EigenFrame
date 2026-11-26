@@ -1,6 +1,6 @@
 ---
 title: My stars are sharp but the frame is dim. What metric catches that?
-description: How EigenFrame's Transparency metric measures relative atmospheric transmission from matched-star photometry, where it appears, and why it's sometimes blank.
+description: "How EigenFrame's Transparency metric measures relative atmospheric transmission from matched stars, where it appears, how it weights a stack, and why it's sometimes blank."
 ---
 
 # My stars are sharp but the frame is dim. What metric catches that?
@@ -9,7 +9,7 @@ Transparency measures relative atmospheric transmission: how much of a star's li
 
 ## How it's measured
 
-For each frame, EigenFrame matches its detected stars against the same physical stars in the target's alignment reference, then compares brightness star by star across every match. A frame where the matched stars all read dimmer than their counterparts in the reference gets a low transparency value; a frame where they read brighter gets a high one. Using many matched stars at once keeps the result steady even if a few of them are variable.
+For each frame, EigenFrame matches its detected stars against the same physical stars in the target's alignment reference, then compares the brightness of the reference's brightest stars, star by star. Saturated stars are left out. A frame where those stars read dimmer than their counterparts in the reference gets a low transparency value; a frame where they read brighter gets a high one. A few variable stars, or a few stars a frame did not record, leave the value steady. A brighter sky by itself, from the moon or twilight, leaves the value alone: it follows starlight. A frame with too few matched bright stars gets no value.
 
 The value is relative within the set, never an absolute figure. It's shown as a fraction of the batch's own clearest frames, so about 1.0 means as transparent as the best frames in that filter's set and lower means hazier. Comparing the number across two different targets, filters, or rigs tells you nothing.
 
@@ -23,7 +23,11 @@ The value is relative within the set, never an absolute figure. It's shown as a 
 
 Transparency needs matched stars, and matches only exist once a frame has an alignment fit against the target's reference. A frame that's been through star detection but hasn't yet been fitted for alignment shows no transparency value. Running or re-running alignment for the target fills it in for every frame that fits well enough.
 
-The value is read off the star catalog the fit was built on, so a frame carrying an old catalog can stay blank even after it aligns. Re-detect its stars, then run alignment again, and it fills in.
+## How it weights a stack
+
+Transparency also sets how much a frame counts in a stack. A frame dimmed by haze supplies less signal for the same noise, so its weight falls in proportion to its Transparency. A frame without a value is weighted by its noise alone.
+
+A frame can show a Transparency value in Cull by metric that the stack does not use: the stack weights it by noise alone until its stars are detected again. The integrate panel's **Ranking** tab counts the frames whose Transparency the weight uses and offers **Detect stars on N frames**, which detects stars again on just the frames left out and measures them. See [quality weighting](../stack/quality-weighting.md).
 
 ## Using it to cull
 

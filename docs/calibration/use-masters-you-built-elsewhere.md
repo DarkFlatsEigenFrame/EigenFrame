@@ -32,6 +32,16 @@ The filename and the folder the master lives in are often the only place those v
 
 Once the fields are set, the master is judged exactly like any other: it either matches a light's camera signature and, for a dark, exposure and set-temperature tolerance, or it does not. See [how calibration is assigned](./how-calibration-is-assigned.md) for what each field does, and [why is my dark or flat not being applied?](./when-calibration-does-not-bind.md) if a light still won't pick it up after the fields are set.
 
+## Flat masters
+
+A flat master from elsewhere is matched like any other flat: rig, frame dimensions, binning and filter, inside the light's epoch. Three header values decide which lights it serves:
+
+- **Its capture date** places it in an epoch and sets its distance in nights from each light. On a rig with a logged optical-train change, a flat master with no capture date is not assigned automatically.
+- **`ROTATOR`**, or `ROTATANG` when that is absent, is its rotator angle. On a rig whose flats depend on rotator angle, it is assigned automatically only to lights within the rig's flat rotation tolerance of that angle, 5° by default.
+- **`NCOMBINE`** is its frame count, which decides between two flats that are otherwise equal.
+
+A flat shot during one target's night serves every target on the rig. If you shoot flats at several rotator angles and build the masters elsewhere, set the rig's **Flats depend on rotator angle** to **Always**. See [flats and rotator angle](./how-calibration-is-assigned.md#flats-and-rotator-angle).
+
 ## Lights that are already calibrated
 
 If a light frame carries a calibration marker in its header, from having already been calibrated before it reached EigenFrame, EigenFrame recognizes that marker and does not calibrate the frame again.

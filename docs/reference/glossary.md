@@ -29,7 +29,7 @@ The umbrella term for anything in the catalog: a raw frame, a [master](#master),
 
 ## Calibration assignment
 
-Which bias, dark, and flat [master](#master) applies to a given light. Every light carries three independent assignments, each either unassigned, deliberately none, or a specific master. See [how calibration is assigned](../calibration/how-calibration-is-assigned.md).
+Which bias, dark, and flat [master](#master) applies to a given light. Every light carries three independent assignments, each either unassigned, deliberately none, or a specific master, assigned automatically or chosen by you. See [how calibration is assigned](../calibration/how-calibration-is-assigned.md).
 
 ## Corners grid
 
@@ -113,7 +113,7 @@ One camera paired with one telescope, discovered from your frame headers as they
 
 ## Rotation group
 
-The flats from one night and filter that share one rotator angle. A night shot at more than one angle holds several rotation groups; their surfaces are measured against each other, combined into one master when they agree and built separately when they do not. In build labels and file names a group is named by its position angle (the recorded rotator angle) padded to three digits: `pa074` is the 74° group, and `noang` collects frames with no recorded rotator angle. See [flat quality verdicts](../calibration/flat-quality-verdicts.md).
+The flats from one night and filter whose rotator angles span no more than the rig's flat rotation tolerance, 5° by default, from the lowest to the highest. A night shot at angles further apart holds several rotation groups; their surfaces are measured against each other, combined into one master when they agree and built separately when they do not. In build labels and file names a group is named by its position angle (the recorded rotator angle) padded to three digits: `pa074` is the 74° group, and `noang` collects frames with no recorded rotator angle. See [flat quality verdicts](../calibration/flat-quality-verdicts.md).
 
 ## Rough alignment
 

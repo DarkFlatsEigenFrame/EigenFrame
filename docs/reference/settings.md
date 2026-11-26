@@ -36,6 +36,8 @@ From the **Equipment** page rig editor. This list matches [rigs and equipment gr
 | Dark frames | Whether an unassigned dark is flagged as missing calibration | Required |
 | Flat frames | Whether an unassigned flat is flagged as missing calibration | Required |
 | Dark set-temp tolerance | How close a dark's set temp must be to a light's for automatic selection | 7°C |
+| Flats depend on rotator angle | Whether only flats within the flat rotation tolerance of a light's rotator angle are assigned automatically: Automatic, Always or Never. See [flats and rotator angle](../calibration/how-calibration-is-assigned.md#flats-and-rotator-angle) | Automatic |
+| Flat rotation tolerance | How many degrees apart two rotator angles can be and still count as the same angle, when a night's flats are grouped and when a flat is matched to a light. Accepts 0.5 to 45; blank uses the default | 5° |
 | Star detection | Candidate bounds, acceptance settings, and quality thresholds for star detection. See [star detection and frame quality](../inspect/star-detection-and-frame-quality.md) | Shipped defaults; quality thresholds blank means flagging is off |
 | Alignment tolerances | Rotation and scale a fit may land in and still be plausible, and whether a 180° flip is allowed. See [when frames will not align](../stack/when-frames-will-not-align.md) | Rotation ± 5.0°, Scale ± about 2%, 180° flip allowed |
 | Output pedestal (DN) | Baseline added to a stacked master so the stored image stays positive | 250 |

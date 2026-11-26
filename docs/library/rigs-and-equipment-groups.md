@@ -25,7 +25,7 @@ Only lights and flats carry a rig. Bias and dark frames do not, and this asymmet
 
 **Bias and darks belong to the sensor.** They record what the camera does with no light reaching it, so they are matched on the camera signature alone: instrument, gain, offset, readout mode and binning, plus exposure and set temperature for a dark. Nothing about the telescope enters that match. A dark library shot on one camera serves every scope you ever mount it on, and moving the camera does not invalidate it.
 
-**Flats and lights belong to the rig.** A flat records the optical train: the scope, the spacing, the filter in the beam, the dust sitting on the sensor window. Change any of it and the flat stops describing the light path. So a flat matches on the rig, the frame geometry and the filter, and it must sit inside the light's [epoch](../calibration/flat-epochs.md).
+**Flats and lights belong to the rig.** A flat records the optical train: the scope, the spacing, the filter in the beam, the dust sitting on the sensor window. Change any of it and the flat stops describing the light path. So a flat matches on the rig, the frame geometry and the filter, and it must sit inside the light's [epoch](../calibration/flat-epochs.md). On a rig whose flats depend on rotator angle, it must also sit within the rig's flat rotation tolerance of the light's rotator angle.
 
 The practical consequence: build your bias and dark library once per camera, and think about flats per rig. [How calibration is assigned](../calibration/how-calibration-is-assigned.md) covers the matching in full.
 
@@ -73,6 +73,16 @@ The rig editor is also where the settings that vary by hardware live. Each one i
 **Dark frames** and **Flat frames**, each **Required** or **Not used for this rig**. A rig that calibrates with bias only, or without flats, sets the relevant one to *Not used* and stops seeing an unassigned dark or flat reported as missing calibration. A master you do assign still applies normally either way.
 
 **Dark set-temp tolerance**, in °C, default 7. A dark is chosen automatically only within this many degrees of the light's set temperature.
+
+**Flats depend on rotator angle**: **Automatic** (default), **Always** or **Never**. On **Always**, a flat is assigned automatically only within the flat rotation tolerance of the light's rotator angle, and a master built from flats spanning more than the tolerance is not assigned automatically. On **Never**, angle only breaks ties between flats from equally near nights. **Automatic** works as Never until the rig's flats have changed with rotation on 2 nights in the current epoch, and as Always from then on.
+
+Choose **Always** when you know this rig's flats change as the camera turns, or when you build its flat masters elsewhere. **Automatic** learns from raw flats shot at two or more angles on one night and measured on the rig's Flats page. Choose **Never** for a rig whose flats do not change with rotation, when you want the nearest night to decide whatever the angle.
+
+**Flat rotation tolerance**, in degrees, default 5, from 0.5 to 45; leave it blank for the default. Rotator angles within this many degrees count as the same angle, both when a night's flats are grouped by angle and when a flat is matched to a light. It is the flats' own and is separate from the alignment **Rotation ± deg**. Changing it measures the rig's flat nights again at the new tolerance.
+
+Both settings apply as soon as you change them, and both are also offered from **Change** on the rig's Flats page. EigenFrame re-evaluates the rig's automatic flat assignments at once and reports how many lights were reassigned and how many now have no flat; on a large rig it does this in the background, on the Activity tray. Flats you chose by hand, and a deliberate *none*, are not touched.
+
+When you log an optical-train change on a rig set to **Always** or **Never**, the logbook entry reads `This rig is set to Always for rotator angle. Review it if the change affects illumination.`, with **Change** to open the setting. The setting stays as it is until you change it. See [flats and rotator angle](../calibration/how-calibration-is-assigned.md#flats-and-rotator-angle).
 
 **Star detection**, in three blocks: candidate bounds, acceptance settings, and quality thresholds. See [star detection and frame quality](../inspect/star-detection-and-frame-quality.md), which covers what each block changes and when the change takes effect.
 

@@ -46,7 +46,7 @@ Linear data renders black until it is stretched. Adjust the black clip and stret
 
 ## A thumbnail says "Can't read this file"
 
-EigenFrame tried to read the frame and the file is damaged: it is shorter than its header says, or its image data fails its checksum or does not decompress. Hover the tile to read the exact reason. EigenFrame stops trying to build that frame, leaves it out of background preparation, and a stack that includes it stops and names the frame.
+EigenFrame tried to read the frame and the file is damaged: it is shorter than its header says, or its image data fails its checksum or does not decompress. Hover the tile to read the exact reason. EigenFrame stops trying to build that frame, leaves it out of background preparation, and a stack that includes it stops and names the frame. A master in this state is never assigned to a light, and a stack whose frames are assigned to it does not run, and names the master.
 
 Press **Reject** on the tile to set the frame aside. If you replace the file with a good copy, EigenFrame picks the new file up on its own. If you repaired the file in place, use **Reindex** on its row on the Artifacts page to read it again.
 
@@ -56,7 +56,8 @@ The calibration assignment step looks for a flat master matching the light's fil
 
 - **No flat master exists yet** for that filter and date on this rig.
 - **The light and the available flats sit on opposite sides of an epoch boundary.** An epoch is the stretch over which one flat still corrects your lights, and it ends when the optical response changes. A flat from before an optical-train change does not calibrate a light from after it, or the reverse.
-- **The match fields don't line up.** Camera signature, binning, or gain differ between the light and the candidate flat.
+- **The match fields don't line up.** The frame dimensions, binning, or filter differ between the light and the candidate flat.
+- **No flat sits within the rig's flat rotation tolerance of the light's rotator angle,** on a rig whose flats depend on rotator angle. The row names the nearest flat and offers it in one click. See [flats and rotator angle](../calibration/how-calibration-is-assigned.md#flats-and-rotator-angle).
 
 The session and target pages show the specific unresolved reason next to the affected frames, along with a link to build a flat for that filter and date when one is missing.
 

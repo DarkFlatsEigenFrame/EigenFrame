@@ -21,7 +21,7 @@ A stack warps each frame by whatever [distortion correction](./alignment-viewer.
 
 ## The stacking lab
 
-The lab stacks one 512 pixel output tile synchronously, so a change to rejection, normalization or weighting repaints the tile within seconds. Use it to see the rejection map, compare two settings against each other, and read the projected relative SNR and per-frame combine weight before you spend the time on a full stack. The lab reads the same settings column the full stack submits, so what you dial in is what you get.
+The lab stacks one 512 pixel output tile synchronously, so a change to rejection, normalization or weighting repaints the tile within seconds. Use it to see the rejection map, compare two settings against each other, and read the projected relative SNR and each frame's combine weight and share before you spend the time on a full stack. The lab reads the same settings column the full stack submits, so what you dial in is what you get.
 
 It reads top to bottom in three bands. The tile preview holds one size whatever the settings under it are doing, so a tuning change shows as a change in the pixels and never as the image moving. Under it sit the controls: the overlay buttons, the stretch histogram, the compare row, and the tile selector with your candidates. Under those, the measurements for whatever is on screen.
 
@@ -37,7 +37,7 @@ It reads top to bottom in three bands. The tile preview holds one size whatever 
 
 **Measurements.** Below the controls: how many frames contributed and the min, median and max number covering any pixel; where the tile's compute went, phase by phase, with a projection of what the full stack will cost in time and memory; how many rounds the rejection needed and whether it hit the iteration cap; which frames the normalization used as its reference and how large a correction the localized field applies; and, with pixel repair on, how many hot and cold pixels it repaired. A center tile projects well, a corner tile does not.
 
-The panel also shows a ranked list of every contributing frame with its combine weight, on a Ranking tab beside Settings.
+The panel also shows a ranked list of every contributing frame with its combine weight and its share of the stacked signal, on a Ranking tab beside Settings. See [quality weighting](./quality-weighting.md#the-ranking-tab-and-projected-relative-snr).
 
 ## Comparing two settings
 
@@ -51,7 +51,20 @@ Mosaic stays available while comparing, so you can flip A against B across the w
 
 ## When some frames lack a valid flat
 
-If the frame set for this filter is mixed, some frames fully calibrated and some missing a valid flat or carrying a suspect one, the panel shows how many of each and defaults to stacking only the fully-calibrated frames. Including the rest is an explicit opt-in: check **Include uncalibrated / suspect-calibrated frames** to add them, or use **Show the affected frames** to jump to the Ranking tab and see exactly which ones are in question first.
+If the frame set for this filter is mixed, some frames fully calibrated and some missing a valid flat or carrying a suspect one, the panel shows how many of each and defaults to stacking only the fully-calibrated frames. Including the rest is an explicit opt-in: check **Include uncalibrated / suspect-calibrated frames** to add them, or use **Show the affected frames** to jump to the Ranking tab and see exactly which ones are in question first. A light left without a flat because none sits within its rig's flat rotation tolerance counts as missing a flat here; see [no flat close enough to the light's rotator angle](../calibration/when-calibration-does-not-bind.md#no-flat-close-enough-to-the-lights-rotator-angle).
+
+## Which flats the stack applies
+
+Above **Integrate N frames** the panel lists one line per flat master the stack will apply, with its rotator angle, its night, and how many lights it calibrates:
+
+`Flats: masterFLAT G 0035 · 256.9° · Oct 9 (45 lights)`
+
+Read it before you commit: it shows which flat calibrates which lights.
+
+If an assignment changes after the panel showed you the frames, while it is open or when you press **Integrate**, a banner says how many lights moved, for example `4 G lights are now assigned a different flat.` **Show** lists each change from the earlier master to the new one, with its light count and, where EigenFrame has one, the reason, such as *nearer night*, *nearer rotator angle* or *outside the rotation tolerance*. Pressing **Integrate** re-evaluates the filter's automatic flat assignments first, so a flat cataloged or rejected since the panel opened shows here before the stack starts. Then pick one:
+
+- **Use the new assignments** refreshes the panel and integrates with the masters assigned now.
+- **Keep the previous assignments** records the earlier masters as chosen by you for those lights, then integrates.
 
 ## Stacking one side of the meridian
 
@@ -68,6 +81,8 @@ A stack whose frames all share one side names itself with that side where the ou
 ## Committing the stack
 
 **Integrate N frames** at the bottom of the panel submits the stack, where N is the frame count actually going in, the fully-calibrated set alone unless you opted the rest in. The panel stays open after you submit, so you can watch it or start dialing in the next filter.
+
+A submitted stack calibrates each frame with the masters assigned when you submitted it. An assignment that changes while the stack waits in the queue or runs leaves it alone.
 
 Progress moves through four phases, shown on the stack itself and mirrored in the queue strip: **Preparing frames**, **Planning**, **Combining**, and **Saving**. **Cancel** is available the whole time. If you navigate away from the target page, the **Activity** tray keeps tracking the run and lets you cancel from there too.
 

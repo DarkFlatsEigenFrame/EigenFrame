@@ -48,6 +48,8 @@ For masters that arrived without the fields calibration matching needs (common f
 
 When every selected row is a light, the same editor offers two more fields, **Object** and **Filter**, for correcting what the capture software wrote. A field left blank is left alone on every frame. Setting a new object name moves the selected frames to that target: the Targets list re-groups on the next read, the moved frames lose their alignment fits and are screened again on the new target, and a session that contained them lists them under the new name. Changing the filter moves the frames to that filter's tab on their target. See [why do I have two M31 cards](./targets.md) for the case where one object name spans two projects.
 
+**Edit / reclassify** works on lights or on other rows, one kind at a time. When a selection holds both, the button shows disabled with the reason beside it, and **Keep only the N light frames** narrows the selection to its lights (the button says masters or artifacts instead on those tabs). Rows the current filter hides still count toward the selection.
+
 ## Where Unclassified comes from
 
 A file lands in Unclassified for one of two reasons:
